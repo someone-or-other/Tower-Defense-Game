@@ -168,3 +168,6 @@ MonoBehaviour:
   speed: 2
   enemyDamagePower: 1
   enemyMoneyValue: 10
+  scaleWithTime: 1
+  enemyBonus: 0
+  bonusMult: 0.1
