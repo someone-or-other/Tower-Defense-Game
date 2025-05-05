@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6765377614746664474}
   - component: {fileID: -7658990234603941684}
   m_Layer: 0
-  m_Name: EnemyRed
+  m_Name: HeavyEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b705304ae797941fe820f3fbf2f401f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a1ed1765246b7483f9a13f384920ea48, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -165,6 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9590ac3a95e1fa643870404a6058e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  enemyDamagePower: 1
+  speed: 0.5
+  enemyDamagePower: 10
   enemyMoneyValue: 10

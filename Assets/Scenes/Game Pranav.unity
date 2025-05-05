@@ -2944,9 +2944,14 @@ MonoBehaviour:
   - {x: 22, y: 11, z: -1}
   - {x: 23, y: -15, z: -1}
   - {x: 42, y: -15, z: -1}
-  enemyPrefab: {fileID: 1184813448204539293, guid: 3e0b9897a8935554b8d9b958ad92b297, type: 3}
+  basicEnemyPrefab: {fileID: 1184813448204539293, guid: 3e0b9897a8935554b8d9b958ad92b297, type: 3}
+  speedEnemyPrefab: {fileID: 1184813448204539293, guid: c8aebdf9e6111834f88487c0b104dce2, type: 3}
+  heavyEnemyPrefab: {fileID: 1184813448204539293, guid: 6866f29bf45abb84da7b2af676f4b4b8, type: 3}
   SpawnPoint: {x: -42, y: 15, z: -1}
   enemyAmountToSpawn: 50
+  basicEnemiesSpawned: 0
+  speedEnemiesSpawned: 0
+  heavyEnemiesSpawned: 0
   minSpawnTime: 1
   maxSpawnTime: 3
 --- !u!4 &2136692939
