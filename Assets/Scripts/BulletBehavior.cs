@@ -7,6 +7,7 @@ public class BulletBehavior : MonoBehaviour
 {
     public float speed = 1f;
     public Vector3 direction;
+    public int damage = 5;
 
     private void Start()
     {

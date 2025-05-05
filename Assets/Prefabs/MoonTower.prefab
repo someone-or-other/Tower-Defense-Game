@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2639084801442016354}
   - component: {fileID: -4210709006837578251}
   m_Layer: 0
-  m_Name: Tower
+  m_Name: MoonTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
