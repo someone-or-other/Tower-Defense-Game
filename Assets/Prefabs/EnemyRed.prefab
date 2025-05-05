@@ -168,3 +168,4 @@ MonoBehaviour:
   speed: 2
   enemyDamagePower: 1
   enemyMoneyValue: 10
+  health: 5

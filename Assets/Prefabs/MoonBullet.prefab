@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5756196144820662635}
   - component: {fileID: 4391359128803173191}
   m_Layer: 0
-  m_Name: MoonBuilet
+  m_Name: MoonBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
