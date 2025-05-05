@@ -5,7 +5,6 @@ using UnityEngine;
 public class BuyTowerButtonBehavior : MonoBehaviour
 {
     public GameObject buyMenu;
-
     void Start()
     {
         buyMenu.SetActive(false);
