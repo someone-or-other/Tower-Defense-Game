@@ -9,7 +9,7 @@ public class EnemyBehavior : MonoBehaviour
     public int enemyMoneyValue = 10;
     private GameManager gameManager;
     private MoneyCounterBehavior moneyCounter;
-    private int health;
+    public int health;
 
     private Vector3[] waypoints;
     private int counter = 0;
@@ -52,9 +52,10 @@ public class EnemyBehavior : MonoBehaviour
             if (health - other.GetComponent<BulletBehavior>().damage <= 0)
             {
                 moneyCounter.ChangeMoney(Random.Range(10, 50)); //Aarjit! Heres the line that gives you $$$ for killing enemy! Maybe make it so diff enemies have a value variable instead of a fixed range!
-                Destroy(other.gameObject);
                 Destroy(gameObject);
             }
+            health -= other.GetComponent<BulletBehavior>().damage;
+            Destroy(other.gameObject);
         }
     }
 }
