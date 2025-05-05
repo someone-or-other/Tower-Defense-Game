@@ -58,4 +58,5 @@ public class EnemyBehavior : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
 }
