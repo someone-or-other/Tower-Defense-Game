@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6765377614746664474}
   - component: {fileID: -7658990234603941684}
   m_Layer: 0
-  m_Name: BasicEnemy
+  m_Name: SupportEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b705304ae797941fe820f3fbf2f401f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 07818dce7b38c41e0b5db6433f5e9c0b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -166,6 +166,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  enemyDamagePower: 1
-  enemyMoneyValue: 25
-  health: 5
+  enemyDamagePower: 2
+  enemyMoneyValue: 50
+  health: 3

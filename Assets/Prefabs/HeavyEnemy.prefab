@@ -167,4 +167,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   enemyDamagePower: 10
-  enemyMoneyValue: 10
+  enemyMoneyValue: 75
+  health: 10
