@@ -19,4 +19,9 @@ public class BuyTowerButtonBehavior : MonoBehaviour
     {
         buyMenu.SetActive(true);
     }
+
+    public void PressButtonExitBuy()
+    {
+        buyMenu.SetActive(false);
+    }
 }
