@@ -4,30 +4,31 @@ using UnityEngine;
 
 public class EnemyBuffingTrigger : MonoBehaviour
 {
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag("Enemy"))
+        Debug.Log("hello");
+        if(other.tag == "Enemy")
         {
-            other.getComponent<EnemyBehavior>().health += 2;
-            other.getComponent<EnemyBehavior>().enemyDamagePower += 5;
-            other.getComponent<EnemyBehavior>().speed += 2;
+            other.gameObject.GetComponent<EnemyBehavior>().health += 2;
+            other.gameObject.GetComponent<EnemyBehavior>().enemyDamagePower += 5;
+            other.gameObject.GetComponent<EnemyBehavior>().speed += 2;
+            gameObject.GetComponentInParent<EnemyBehavior>().health += 2;
+            gameObject.GetComponentInParent<EnemyBehavior>().enemyDamagePower += 5;
+            gameObject.GetComponentInParent<EnemyBehavior>().speed += 2;
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.tag == "Enemy")
         {
-            other.getComponent<EnemyBehavior>().health -= 2;
-            other.getComponent<EnemyBehavior>().enemyDamagePower -= 5;
-            other.getComponent<EnemyBehavior>().speed -= 2;
+            other.gameObject.GetComponent<EnemyBehavior>().health -= 2;
+            other.gameObject.GetComponent<EnemyBehavior>().enemyDamagePower -= 5;
+            other.gameObject.GetComponent<EnemyBehavior>().speed -= 2;
+            gameObject.GetComponentInParent<EnemyBehavior>().health -= 2;
+            gameObject.GetComponentInParent<EnemyBehavior>().enemyDamagePower -= 5;
+            gameObject.GetComponentInParent<EnemyBehavior>().speed -= 2;
         }
     }
 }
