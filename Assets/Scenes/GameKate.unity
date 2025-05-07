@@ -3069,6 +3069,7 @@ GameObject:
   - component: {fileID: 1258895724}
   - component: {fileID: 1258895723}
   - component: {fileID: 1258895726}
+  - component: {fileID: 1258895727}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3139,7 +3140,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1258895724}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1258895727}
+        m_TargetAssemblyTypeName: BuyTowerBehavior, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1258895724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3198,6 +3211,21 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &1258895727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258895721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f96a3f2e94bc24482d6fa44ec5dc87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priceText: {fileID: 658244754}
+  price: 0
+  towerPrefab: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
 --- !u!1 &1444277536
 GameObject:
   m_ObjectHideFlags: 0
@@ -3877,9 +3905,14 @@ MonoBehaviour:
   - {x: 22, y: 11, z: -1}
   - {x: 23, y: -15, z: -1}
   - {x: 42, y: -15, z: -1}
-  enemyPrefab: {fileID: 1184813448204539293, guid: 3e0b9897a8935554b8d9b958ad92b297, type: 3}
+  basicEnemyPrefab: {fileID: 1184813448204539293, guid: 3e0b9897a8935554b8d9b958ad92b297, type: 3}
+  speedEnemyPrefab: {fileID: 1184813448204539293, guid: c8aebdf9e6111834f88487c0b104dce2, type: 3}
+  heavyEnemyPrefab: {fileID: 1184813448204539293, guid: 6866f29bf45abb84da7b2af676f4b4b8, type: 3}
   SpawnPoint: {x: -42, y: 15, z: -1}
   enemyAmountToSpawn: 50
+  basicEnemiesSpawned: 0
+  speedEnemiesSpawned: 0
+  heavyEnemiesSpawned: 0
   minSpawnTime: 1
   maxSpawnTime: 3
 --- !u!4 &1659543281
