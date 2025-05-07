@@ -43,14 +43,14 @@ public class GameManager : MonoBehaviour
             int random = Random.Range(0, 3);
             if (random == 0)
                 Instantiate(basicEnemyPrefab, SpawnPoint, Quaternion.identity);
-            if (random == 1 && speedEnemiesSpawned > speedEnemyCap)
+            if (random == 1 && speedEnemiesSpawned < speedEnemyCap)
             {
                 Instantiate(speedEnemyPrefab, SpawnPoint, Quaternion.identity);
                 speedEnemiesSpawned++;
             }
             else
                 Instantiate(basicEnemyPrefab, SpawnPoint, Quaternion.identity);
-            if (random == 2 && heavyEnemiesSpawned > heavyEnemyCap)
+            if (random == 2 && heavyEnemiesSpawned < heavyEnemyCap)
             {
                 Instantiate(heavyEnemyPrefab, SpawnPoint, Quaternion.identity);
                 heavyEnemiesSpawned++;
