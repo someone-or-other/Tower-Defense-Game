@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6765377614746664474}
   - component: {fileID: -7658990234603941684}
   m_Layer: 0
-  m_Name: BasicEnemy
+  m_Name: BalanceEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b705304ae797941fe820f3fbf2f401f5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7885b3da049934fc29bb8b3f5466faa2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -165,10 +165,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9590ac3a95e1fa643870404a6058e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  enemyDamagePower: 1
-  enemyMoneyValue: 25
-  health: 5
+  speed: 3
+  enemyDamagePower: 15
+  enemyMoneyValue: 100
+  health: 8
   scaleWithTime: 0
   enemyBonus: 0
   bonusMult: 0.01
