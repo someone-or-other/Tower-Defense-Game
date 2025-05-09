@@ -165,7 +165,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9590ac3a95e1fa643870404a6058e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 4
   enemyDamagePower: 3
   enemyMoneyValue: 50
   health: 2
+  scaleWithTime: 0
+  enemyBonus: 0
+  bonusMult: 0.01

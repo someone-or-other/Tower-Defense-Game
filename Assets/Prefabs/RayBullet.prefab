@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 5652405312527653849}
   - component: {fileID: 5756196144820662635}
   - component: {fileID: 4391359128803173191}
-  - component: {fileID: 6096560085478590231}
-  - component: {fileID: 7144862317387641234}
+  - component: {fileID: 1017369188948918206}
+  - component: {fileID: 2961639357791343541}
   m_Layer: 0
-  m_Name: MoonBullet
+  m_Name: RayBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -21.649641, y: -2.3750136, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9c5f828a63efa6d4d81436d751a5051b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 04aada81e93698344b870dc3dab96d28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -173,10 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aef8de4618e9094880f766872acafa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 20
   direction: {x: 0, y: 0, z: 0}
-  damage: 4
---- !u!114 &6096560085478590231
+  damage: 10
+--- !u!114 &1017369188948918206
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,12 +192,12 @@ MonoBehaviour:
   m_LightType: 2
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.7411765, g: 0.8743536, b: 1, a: 1}
-  m_Intensity: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.5
   m_LightVolumeIntensity: 1
-  m_LightVolumeIntensityEnabled: 1
-  m_ApplyToSortingLayers: 00000000
-  m_LightCookieSprite: {fileID: 21300000, guid: 9c5f828a63efa6d4d81436d751a5051b, type: 3}
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000fd92d306
+  m_LightCookieSprite: {fileID: 21300000, guid: 04aada81e93698344b870dc3dab96d28, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!95 &7144862317387641234
+--- !u!95 &2961639357791343541
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -236,7 +236,7 @@ Animator:
   m_GameObject: {fileID: 6779390260326347859}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bd3c1da074a869a4583bab35722c036f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 885bc2178323a414790b0c8531916aab, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

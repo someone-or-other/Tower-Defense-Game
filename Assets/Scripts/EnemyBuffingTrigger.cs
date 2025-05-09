@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class EnemyBuffingTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    
+    void OnTriggerEnter2D(Collider2D other)
     {
-        
+        Debug.Log("hello");
+        if(other.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<EnemyBehavior>().health += 1;
+            other.gameObject.GetComponent<EnemyBehavior>().enemyDamagePower += 5;
+            other.gameObject.GetComponent<EnemyBehavior>().speed += 1;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerExit2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<EnemyBehavior>().health -= 1;
+            other.gameObject.GetComponent<EnemyBehavior>().enemyDamagePower -= 5;
+            other.gameObject.GetComponent<EnemyBehavior>().speed -= 1;
+        }
     }
 }

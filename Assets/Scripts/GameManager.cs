@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     private LivesCounterBehavior livesCounter;
 
     private bool isAreaAllowed;
+
     public bool GetIsAreaAllowed()
     {
         return isAreaAllowed;
@@ -18,13 +19,17 @@ public class GameManager : MonoBehaviour
     int speedEnemyCap = 20;
     public GameObject heavyEnemyPrefab;
     int heavyEnemyCap = 10;
+    public GameObject supportEnemyPrefab;
+    int supportEnemyCap = 5;
 
+    public int currentRound = 0;
     public Vector3 SpawnPoint;
 
     public int enemyAmountToSpawn = 50;
     public int basicEnemiesSpawned = 0;
     public int speedEnemiesSpawned = 0;
     public int heavyEnemiesSpawned = 0;
+    public int supportEnemiesSpawned = 0;
     public float minSpawnTime = 1f;
     public float maxSpawnTime = 3f; 
 
@@ -40,23 +45,27 @@ public class GameManager : MonoBehaviour
         
         for (int i = 0; i < number; i++)
         {
-            int random = Random.Range(0, 3);
-            if (random == 0)
-                Instantiate(basicEnemyPrefab, SpawnPoint, Quaternion.identity);
-            if (random == 1 && speedEnemiesSpawned < speedEnemyCap)
+            int random = Random.Range(0, 7);
+            Debug.Log(random);
+            if (random == 0 && speedEnemiesSpawned < speedEnemyCap)
             {
                 Instantiate(speedEnemyPrefab, SpawnPoint, Quaternion.identity);
                 speedEnemiesSpawned++;
             }
-            else
-                Instantiate(basicEnemyPrefab, SpawnPoint, Quaternion.identity);
-            if (random == 2 && heavyEnemiesSpawned < heavyEnemyCap)
+            else if (random == 1 && heavyEnemiesSpawned < heavyEnemyCap)
             {
                 Instantiate(heavyEnemyPrefab, SpawnPoint, Quaternion.identity);
                 heavyEnemiesSpawned++;
             }
+            else if (random < 3 && supportEnemiesSpawned < supportEnemyCap)
+            {
+                Instantiate(supportEnemyPrefab, SpawnPoint, Quaternion.identity);
+                supportEnemiesSpawned++;
+            }
             else
+            {
                 Instantiate(basicEnemyPrefab, SpawnPoint, Quaternion.identity);
+            }
             float ratio = i * 1f / (number - 1);
             float timeToWait = Mathf.Lerp(minSpawnTime, maxSpawnTime, 1-ratio);
             Debug.Log(timeToWait);

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6765377614746664474}
   - component: {fileID: -7658990234603941684}
   m_Layer: 0
-  m_Name: BasicEnemy
+  m_Name: BasicBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -18.8, y: -17.5, z: -1}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -166,9 +166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  enemyDamagePower: 1
-  enemyMoneyValue: 25
-  health: 5
+  enemyDamagePower: 20
+  enemyMoneyValue: 200
+  health: 20
   scaleWithTime: 0
   enemyBonus: 0
   bonusMult: 0.01
