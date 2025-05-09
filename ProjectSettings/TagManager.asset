@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Bullet
   - Enemy
+  - BuyMenu
+  - ButtonMoon
+  - ButtonSpark
+  - ButtonShadow
+  - ButtonRay
   layers:
   - Default
   - TransparentFX

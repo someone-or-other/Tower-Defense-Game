@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class BuyTowerButtonBehavior : MonoBehaviour
 {
+    public PlaceTowerBehavior PlaceMoonTowerBehavior;
+    public PlaceTowerBehavior PlaceSparkTowerBehavior;
+    public PlaceTowerBehavior PlaceShadowTowerBehavior;
+    public PlaceTowerBehavior PlaceRayTowerBehavior;
     public GameObject buyMenu;
     void Start()
     {
-
         buyMenu.SetActive(false);
+        
     }
 
     void Update()
