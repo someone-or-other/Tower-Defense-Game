@@ -9,7 +9,7 @@ public class EnemyBehavior : MonoBehaviour
     public int enemyMoneyValue = 10;
     private GameManager gameManager;
     private MoneyCounterBehavior moneyCounter;
-    private int health;
+    public int health;
 
     private Vector3[] waypoints;
     private int counter = 0;
@@ -68,6 +68,9 @@ public class EnemyBehavior : MonoBehaviour
                 Destroy(other.gameObject);
                 Destroy(gameObject);
             }
+            health -= other.GetComponent<BulletBehavior>().damage;
+            Destroy(other.gameObject);
         }
     }
+
 }
