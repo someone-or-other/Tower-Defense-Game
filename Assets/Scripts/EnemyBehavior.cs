@@ -15,8 +15,15 @@ public class EnemyBehavior : MonoBehaviour
     private int counter = 0;
     private const float changeDist = 0.001f;
 
+    public bool scaleWithTime;
+    public double enemyBonus = 0.0;
+    public float bonusMult = .01f;
+    private int initialMoney;
+
+
     private void Start()
     {
+        initialMoney = enemyMoneyValue;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         moneyCounter = GameObject.Find("MoneyCounter").GetComponent<MoneyCounterBehavior>();
         waypoints = gameManager.waypoints;
@@ -25,6 +32,12 @@ public class EnemyBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (scaleWithTime)
+        {
+            enemyBonus = Time.time * bonusMult; // change bonus mult amount if you want to change money amount scaling
+            enemyMoneyValue = initialMoney + ((int) enemyBonus);
+        }
+
         if (counter == waypoints.Length)
         {
             gameManager.EnemyHasReachedTheFortress(enemyDamagePower);
@@ -51,7 +64,8 @@ public class EnemyBehavior : MonoBehaviour
         {
             if (health - other.GetComponent<BulletBehavior>().damage <= 0)
             {
-                moneyCounter.ChangeMoney(enemyMoneyValue); //Aarjit! Heres the line that gives you $$$ for killing enemy! Maybe make it so diff enemies have a value variable instead of a fixed range!
+                moneyCounter.ChangeMoney(Random.Range(enemyMoneyValue, enemyMoneyValue+50)); //Aarjit! Heres the line that gives you $$$ for killing enemy! Maybe make it so diff enemies have a value variable instead of a fixed range!
+                Destroy(other.gameObject);
                 Destroy(gameObject);
             }
             health -= other.GetComponent<BulletBehavior>().damage;
