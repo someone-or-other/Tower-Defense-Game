@@ -9,7 +9,7 @@ public class TowerBehavior : MonoBehaviour
     public float reloadTime;
     public GameObject bulletPrefab;
     public static GameObject modTowerMenu;
-
+    public bool targetFarthest;
 
     private float elapsedTime;
 
@@ -20,21 +20,43 @@ public class TowerBehavior : MonoBehaviour
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, rangeRadius);
         if (hitColliders.Length != 0)
         {
-            float min = int.MaxValue;
-            int index = -1;
-            for (int i = 0; i < hitColliders.Length; i++)
-            {
-                if (hitColliders[i].CompareTag("Enemy"))
+                int index = -1;
+                if (!targetFarthest)
                 {
-                    float distance = Vector2.Distance(hitColliders[i].transform.position, transform.position);
-                    if (distance < min)
+                    float min = int.MaxValue;
+                   
+                    for (int i = 0; i < hitColliders.Length; i++)
                     {
-                        index = i;
-                        min = distance;
+                        if (hitColliders[i].CompareTag("Enemy"))
+                        {
+                            float distance = Vector2.Distance(hitColliders[i].transform.position, transform.position);
+                            if (distance < min)
+                            {
+                                index = i;
+                                min = distance;
+                            }
+                        }
                     }
                 }
-            }
-            if (index == -1)
+                else
+                {
+                    float max = int.MinValue;
+
+                    for (int i = 0; i < hitColliders.Length; i++)
+                    {
+                        if (hitColliders[i].CompareTag("Enemy"))
+                        {
+                            float distance = Vector2.Distance(hitColliders[i].transform.position, transform.position);
+                            if (distance > max)
+                            {
+                                index = i;
+                                max = distance;
+                            }
+                        }
+                    }
+                }
+
+                if (index == -1)
             {
                 return;
             }
