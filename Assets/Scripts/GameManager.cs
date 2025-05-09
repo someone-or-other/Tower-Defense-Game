@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     private LivesCounterBehavior livesCounter;
 
     private bool isAreaAllowed;
+
     public bool GetIsAreaAllowed()
     {
         return isAreaAllowed;
@@ -21,6 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject supportEnemyPrefab;
     int supportEnemyCap = 2;
 
+    public int currentRound = 0;
     public Vector3 SpawnPoint;
 
     public int enemyAmountToSpawn = 50;
