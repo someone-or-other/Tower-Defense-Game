@@ -169,7 +169,10 @@ MonoBehaviour:
   speed: 3
   enemyDamagePower: 2
   enemyMoneyValue: 50
-  health: 3
+  health: 4
+  scaleWithTime: 0
+  enemyBonus: 0
+  bonusMult: 0.01
 --- !u!1 &7720797900335637871
 GameObject:
   m_ObjectHideFlags: 0

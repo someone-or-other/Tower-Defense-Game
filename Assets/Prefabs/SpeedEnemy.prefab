@@ -169,3 +169,6 @@ MonoBehaviour:
   enemyDamagePower: 3
   enemyMoneyValue: 50
   health: 2
+  scaleWithTime: 0
+  enemyBonus: 0
+  bonusMult: 0.01
