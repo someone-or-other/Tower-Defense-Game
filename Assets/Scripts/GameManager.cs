@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public GameObject heavyEnemyPrefab;
     int heavyEnemyCap = 10;
     public GameObject supportEnemyPrefab;
-    int supportEnemyCap = 2;
+    int supportEnemyCap = 5;
 
     public int currentRound = 0;
     public Vector3 SpawnPoint;
