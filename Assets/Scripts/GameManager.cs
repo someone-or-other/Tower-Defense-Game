@@ -50,12 +50,12 @@ public class GameManager : MonoBehaviour
                 Instantiate(speedEnemyPrefab, SpawnPoint, Quaternion.identity);
                 speedEnemiesSpawned++;
             }
-            else if (random == 2 && heavyEnemiesSpawned < heavyEnemyCap)
+            else if (random == 1 && heavyEnemiesSpawned < heavyEnemyCap)
             {
                 Instantiate(heavyEnemyPrefab, SpawnPoint, Quaternion.identity);
                 heavyEnemiesSpawned++;
             }
-            else if (random < 5 && supportEnemiesSpawned < supportEnemyCap)
+            else if (random < 3 && supportEnemiesSpawned < supportEnemyCap)
             {
                 Instantiate(supportEnemyPrefab, SpawnPoint, Quaternion.identity);
                 supportEnemiesSpawned++;
