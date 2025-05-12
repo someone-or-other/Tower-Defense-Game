@@ -23,11 +23,13 @@ public class BuyTowerButtonBehavior : MonoBehaviour
     public void PressButtonBuy()
     {
         buyMenu.SetActive(true);
+        Debug.Log("open menu");
         Time.timeScale = 0.0f;
     }
 
     public void PressButtonExitBuy()
     {
+        Debug.Log("close menu");
         buyMenu.SetActive(false);
         Time.timeScale = 1.0f;
     }

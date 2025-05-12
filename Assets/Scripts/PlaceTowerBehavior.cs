@@ -35,17 +35,22 @@ public class PlaceTowerBehavior : MonoBehaviour
             gameObject.AddComponent<BoxCollider2D>();
             isPlacingTower = buyMoonTowerBehaviorGameObject.GetIsPlacingTower();
             if (isPlacingTower)
+            {
                 Debug.Log("placed");
+                buyMoonTowerBehaviorGameObject.BuyTowerButtonBehaviorScript.buyMenu.SetActive(true);
+            }
             hasPlacedTower = true;
+
             isPlacingTower = false;
-
+            Destroy(this);
         }
-
+        /*
         if(buyMoonTowerBehaviorGameObject.GetHasPlacedTower())
         {
             Debug.Log("destroy");
             Destroy(this);
         }
+        */
     }
 
 

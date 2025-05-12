@@ -32,14 +32,14 @@ public class BuyTowerBehavior : MonoBehaviour
             isPlacingTower = true;
             Debug.Log("isPlacingTower");
             BuyTowerButtonBehaviorScript.buyMenu.SetActive(false);
-            if (hasPlacedTower)
+            if (!isPlacingTower)
             {
                 BuyTowerButtonBehaviorScript.buyMenu.SetActive(true);
 
                 PlaceTowerBehaviorScript = GameObject.Find("MoonTower").GetComponent<PlaceTowerBehavior>();
                 BuyTowerButtonBehaviorScript.buyMenu.SetActive(true);
-                hasPlacedTower = PlaceTowerBehaviorScript.GetFinishPlacingTower();
-                if (hasPlacedTower)
+              //  hasPlacedTower = PlaceTowerBehaviorScript.GetFinishPlacingTower();
+                if (!isPlacingTower)
                 {
                     Debug.Log("has placed tower true");
 
@@ -55,11 +55,11 @@ public class BuyTowerBehavior : MonoBehaviour
     private void Update()
     {
         if(isPlacingTower)
-        hasPlacedTower = PlaceTowerBehaviorScript.GetFinishPlacingTower();
-        if (hasPlacedTower)
+       // hasPlacedTower = PlaceTowerBehaviorScript.GetFinishPlacingTower();
+        if (!isPlacingTower)
         {
             BuyTowerButtonBehaviorScript.buyMenu.SetActive(true);
-            hasPlacedTower = false;
+            //hasPlacedTower = false;
         }
     }
 
