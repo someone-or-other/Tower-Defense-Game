@@ -166,21 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  enemyDamagePower: 1
-  enemyMoneyValue: 25
+  enemyDamagePower: 2
+  enemyMoneyValue: 10
+  initialMoney: 10
   health: 5
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  scaleWithTime: 0
-=======
-  scaleWithTime: 1
->>>>>>> Stashed changes
-=======
-  scaleWithTime: 1
->>>>>>> Stashed changes
-=======
-  scaleWithTime: 1
->>>>>>> Stashed changes
-  enemyBonus: 0
-  bonusMult: 0.01
+  bonusPerRound: 25
