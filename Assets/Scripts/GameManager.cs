@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
     public float minSpawnTime = 1f;
     public float maxSpawnTime = 3f;
 
-    private int currentRound = 0;
     private bool isGameOver;
 
     private EnemyBehavior speedBehavior;
