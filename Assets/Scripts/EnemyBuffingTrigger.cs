@@ -7,7 +7,6 @@ public class EnemyBuffingTrigger : MonoBehaviour
     
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("hello");
         if(other.CompareTag("Enemy"))
         {
             other.gameObject.GetComponent<EnemyBehavior>().health += 1;
