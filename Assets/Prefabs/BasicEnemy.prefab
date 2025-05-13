@@ -171,7 +171,11 @@ MonoBehaviour:
   health: 5
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   scaleWithTime: 0
+=======
+  scaleWithTime: 1
+>>>>>>> Stashed changes
 =======
   scaleWithTime: 1
 >>>>>>> Stashed changes
