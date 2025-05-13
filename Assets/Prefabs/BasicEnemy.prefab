@@ -169,6 +169,10 @@ MonoBehaviour:
   enemyDamagePower: 1
   enemyMoneyValue: 25
   health: 5
+<<<<<<< Updated upstream
   scaleWithTime: 0
+=======
+  scaleWithTime: 1
+>>>>>>> Stashed changes
   enemyBonus: 0
   bonusMult: 0.01
