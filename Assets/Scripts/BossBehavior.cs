@@ -23,7 +23,7 @@ public class BossBehavior : MonoBehaviour
     {
         for(int i = 0; i < 5; i++)
         {
-            Instantiate(minionPrefab, new Vector3(-42, 15, -1), Quaternion.identity);
+            Instantiate(minionPrefab, new Vector3(Random.Range(transform.position.x - 0.5f, transform.position.x + 0.5f), Random.Range(transform.position.y - 0.5f, transform.position.y + 0.5f), transform.position.z), Quaternion.identity);
             float ratio = i * 1f / (5 - 1);
             float timeToWait = Mathf.Lerp(0.5f, 1.5f, 1 - ratio);
             yield return new WaitForSeconds(timeToWait);
