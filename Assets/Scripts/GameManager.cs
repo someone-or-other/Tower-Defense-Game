@@ -25,13 +25,23 @@ public class GameManager : MonoBehaviour
     public int currentRound = 0;
     public Vector3 SpawnPoint;
 
-    public int enemyAmountToSpawn = 50;
+    public int enemyAmountToSpawn = 25;
     public int basicEnemiesSpawned = 0;
     public int speedEnemiesSpawned = 0;
     public int heavyEnemiesSpawned = 0;
     public int supportEnemiesSpawned = 0;
     public float minSpawnTime = 1f;
-    public float maxSpawnTime = 3f; 
+    public float maxSpawnTime = 3f;
+
+    private int currentRound = 0;
+    private bool isGameOver;
+
+    private EnemyBehavior speedBehavior;
+    private EnemyBehavior heavyBehavior;
+    private EnemyBehavior supportBehavior;
+    private EnemyBehavior basicBehavior;
+
+    private int round = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +52,16 @@ public class GameManager : MonoBehaviour
 
     IEnumerator SpawnEnemies(int number)
     {
-        
+        speedBehavior = speedEnemyPrefab.GetComponent<EnemyBehavior>();
+        heavyBehavior = speedEnemyPrefab.GetComponent<EnemyBehavior>();
+        supportBehavior = speedEnemyPrefab.GetComponent<EnemyBehavior>();
+        basicBehavior = speedEnemyPrefab.GetComponent<EnemyBehavior>();
+
+        speedBehavior.updateMoney(round);
+        heavyBehavior.updateMoney(round);
+        supportBehavior.updateMoney(round);
+        basicBehavior.updateMoney(round);
+
         for (int i = 0; i < number; i++)
         {
             int random = Random.Range(0, 7);
@@ -72,13 +91,15 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(timeToWait);
         }
 
-        bool isGameOver = false;
+        isGameOver = false;
 
         while (!isGameOver)
         {
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
             {
                 isGameOver = true;
+                round++;
+                yield return new WaitForSeconds(10);
             }
             else
             {
@@ -105,5 +126,15 @@ public class GameManager : MonoBehaviour
     {
         isAreaAllowed = false;
     }
-
+    private void Update()
+    {
+        if (isGameOver)
+        {
+            Debug.Log("Skib New Round");
+            enemyAmountToSpawn += 10;
+            // minSpawnTime += 1f;
+            StartCoroutine("SpawnEnemies", enemyAmountToSpawn);
+            isGameOver = false;
+        }
+    }
 }
