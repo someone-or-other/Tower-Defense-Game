@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     int heavyEnemyCap = 10;
     public GameObject supportEnemyPrefab;
     int supportEnemyCap = 5;
+    public GameObject bossPrefab;
+    bool bossCap = false;
 
     public int currentRound = 0;
     public Vector3 SpawnPoint;
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour
     private EnemyBehavior heavyBehavior;
     private EnemyBehavior supportBehavior;
     private EnemyBehavior basicBehavior;
+    private EnemyBehavior bossBehavior;
 
     public TMP_Text roundText;
 
@@ -57,33 +60,40 @@ public class GameManager : MonoBehaviour
     IEnumerator SpawnEnemies(int number)
     {
         speedBehavior = speedEnemyPrefab.GetComponent<EnemyBehavior>();
-        heavyBehavior = speedEnemyPrefab.GetComponent<EnemyBehavior>();
-        supportBehavior = speedEnemyPrefab.GetComponent<EnemyBehavior>();
-        basicBehavior = speedEnemyPrefab.GetComponent<EnemyBehavior>();
+        heavyBehavior = heavyEnemyPrefab.GetComponent<EnemyBehavior>();
+        supportBehavior = supportEnemyPrefab.GetComponent<EnemyBehavior>();
+        basicBehavior = basicEnemyPrefab.GetComponent<EnemyBehavior>();
+        bossBehavior = bossPrefab.GetComponent<EnemyBehavior>();
 
         speedBehavior.updateMoney(round);
         heavyBehavior.updateMoney(round);
         supportBehavior.updateMoney(round);
         basicBehavior.updateMoney(round);
+        bossBehavior.updateMoney(round);
 
         for (int i = 0; i < number; i++)
         {
-            int random = Random.Range(0, 7);
+            int random = Random.Range(0, round/2 + 1);
             Debug.Log(random);
-            if (random == 0 && speedEnemiesSpawned < speedEnemyCap)
+            if (random == 1 && speedEnemiesSpawned < speedEnemyCap)
             {
                 Instantiate(speedEnemyPrefab, SpawnPoint, Quaternion.identity);
                 speedEnemiesSpawned++;
             }
-            else if (random == 1 && heavyEnemiesSpawned < heavyEnemyCap)
+            else if (random == 2 && heavyEnemiesSpawned < heavyEnemyCap)
             {
                 Instantiate(heavyEnemyPrefab, SpawnPoint, Quaternion.identity);
                 heavyEnemiesSpawned++;
             }
-            else if (random < 3 && supportEnemiesSpawned < supportEnemyCap)
+            else if (random < 4 && supportEnemiesSpawned < supportEnemyCap)
             {
                 Instantiate(supportEnemyPrefab, SpawnPoint, Quaternion.identity);
                 supportEnemiesSpawned++;
+            }
+            else if(random > 6 && bossCap)
+            {
+                Instantiate(bossPrefab, SpawnPoint, Quaternion.identity);
+                bossCap = true;
             }
             else
             {
@@ -94,14 +104,14 @@ public class GameManager : MonoBehaviour
             Debug.Log(timeToWait);
             yield return new WaitForSeconds(timeToWait);
         }
-
+        bossCap = false;
         while (!isGameOver)
         {
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
             {
                 isGameOver = true;
 
-                yield return new WaitForSeconds(10);
+                yield return new WaitForSeconds(1);
             }
             else
             {
