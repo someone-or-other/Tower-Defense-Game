@@ -1317,7 +1317,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 73482953}
   PlaceTowerBehaviorScript: {fileID: -4210709006837578251, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-  moneyCounter: {fileID: 0}
   priceText: {fileID: 658244754}
   price: 0
   towerPrefab: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
@@ -1591,7 +1590,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 73482953}
   PlaceTowerBehaviorScript: {fileID: -4210709006837578251, guid: 1cf1d85ab68060941b26aad7950efb1c, type: 3}
-  moneyCounter: {fileID: 0}
   priceText: {fileID: 658244754}
   price: 0
   towerPrefab: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
@@ -2584,7 +2582,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 73482953}
   PlaceTowerBehaviorScript: {fileID: -4210709006837578251, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-  moneyCounter: {fileID: 0}
   priceText: {fileID: 658244754}
   price: 0
   towerPrefab: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
@@ -3247,7 +3244,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 73482953}
   PlaceTowerBehaviorScript: {fileID: -4210709006837578251, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-  moneyCounter: {fileID: 0}
   priceText: {fileID: 1887111366}
   price: 1200
   towerPrefab: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
@@ -6222,7 +6218,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 73482953}
   PlaceTowerBehaviorScript: {fileID: -4210709006837578251, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-  moneyCounter: {fileID: 0}
   priceText: {fileID: 658244754}
   price: 10
   towerPrefab: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}

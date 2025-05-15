@@ -1323,7 +1323,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 73482953}
   PlaceTowerBehaviorScript: {fileID: -4210709006837578251, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-  moneyCounter: {fileID: 0}
   priceText: {fileID: 658244754}
   price: 0
   towerPrefab: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
@@ -1478,71 +1477,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383579120}
   m_CullTransparentMesh: 1
---- !u!1001 &401260468
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-      propertyPath: m_Name
-      value: MoonTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296472623953333873, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-      propertyPath: m_Intensity
-      value: 0.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 1296472623953333873, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-      propertyPath: m_LightCookieSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 5b54f477bfe79214596b0a568b48d156, type: 3}
-    - target: {fileID: 4938443371019289872, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -24.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.213563
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
 --- !u!1 &421590403
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,7 +1508,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 73482953}
   PlaceTowerBehaviorScript: {fileID: -4210709006837578251, guid: 1cf1d85ab68060941b26aad7950efb1c, type: 3}
-  moneyCounter: {fileID: 0}
   priceText: {fileID: 1697993978}
   price: 10
   towerPrefab: {fileID: 754080005264930440, guid: 1cf1d85ab68060941b26aad7950efb1c, type: 3}
@@ -1920,10 +1853,10 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000fd92d306
+  m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -2401,7 +2334,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 73482953}
   PlaceTowerBehaviorScript: {fileID: -4210709006837578251, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
-  moneyCounter: {fileID: 0}
   priceText: {fileID: 1444277538}
   price: 10
   towerPrefab: {fileID: 754080005264930440, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
@@ -3025,7 +2957,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 0}
   PlaceTowerBehaviorScript: {fileID: 0}
-  moneyCounter: {fileID: 0}
   priceText: {fileID: 1887111366}
   price: 1200
   towerPrefab: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
@@ -3232,67 +3163,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1179648862
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 754080005264930440, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
-      propertyPath: m_Name
-      value: RayTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -28.53
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4938443371019289872, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6771661056798068110, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
-      propertyPath: m_Intensity
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
 --- !u!1 &1231340435
 GameObject:
   m_ObjectHideFlags: 0
@@ -3671,71 +3541,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444277536}
   m_CullTransparentMesh: 1
---- !u!1001 &1585521572
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4507499936430273427, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -20.144123
-      objectReference: {fileID: 0}
-    - target: {fileID: 4507499936430273427, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.0902007
-      objectReference: {fileID: 0}
-    - target: {fileID: 4507499936430273427, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4507499936430273427, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4507499936430273427, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4507499936430273427, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4507499936430273427, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4507499936430273427, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4507499936430273427, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4507499936430273427, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096560085478590231, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.654902
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096560085478590231, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
-      propertyPath: m_Color.r
-      value: 0.76862746
-      objectReference: {fileID: 0}
-    - target: {fileID: 6779390260326347859, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
-      propertyPath: m_Name
-      value: MoonBullet
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
 --- !u!1 &1659543268
 GameObject:
   m_ObjectHideFlags: 0
@@ -6087,7 +5892,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 73482953}
   PlaceTowerBehaviorScript: {fileID: -4210709006837578251, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
-  moneyCounter: {fileID: 0}
   priceText: {fileID: 658244754}
   price: 10
   towerPrefab: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
@@ -6108,6 +5912,3 @@ SceneRoots:
   - {fileID: 218142718}
   - {fileID: 683393230}
   - {fileID: 1690703263}
-  - {fileID: 401260468}
-  - {fileID: 1179648862}
-  - {fileID: 1585521572}
