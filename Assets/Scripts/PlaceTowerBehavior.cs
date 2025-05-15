@@ -13,9 +13,12 @@ public class PlaceTowerBehavior : MonoBehaviour
     private BuyTowerBehavior buyShadowTowerBehaviorGameObject;
     private BuyTowerBehavior buyRayTowerBehaviorGameObject;
 
+    private AudioSource source;
+    public AudioClip placing;
 
     void Start()
     {
+        source = GameObject.Find("Audio").GetComponent<AudioSource>();
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
     void Update()
@@ -40,8 +43,9 @@ public class PlaceTowerBehavior : MonoBehaviour
                 buyMoonTowerBehaviorGameObject.BuyTowerButtonBehaviorScript.buyMenu.SetActive(true);
             }
             hasPlacedTower = true;
-
+            source.PlayOneShot(placing);
             isPlacingTower = false;
+
             Destroy(this);
         }
         /*

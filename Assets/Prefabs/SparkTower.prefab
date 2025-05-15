@@ -117,6 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae36caa3876dab48ae4cc339fc6a118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
 --- !u!114 &6002109840480414578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,3 +189,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+=======
+  placing: {fileID: 8300000, guid: b43d102aac6b145468dcaa94a5cccae1, type: 3}
+>>>>>>> Stashed changes

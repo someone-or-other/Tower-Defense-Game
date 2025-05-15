@@ -4186,6 +4186,7 @@ MonoBehaviour:
   speedEnemyPrefab: {fileID: 1184813448204539293, guid: c8aebdf9e6111834f88487c0b104dce2, type: 3}
   heavyEnemyPrefab: {fileID: 1184813448204539293, guid: 6866f29bf45abb84da7b2af676f4b4b8, type: 3}
   supportEnemyPrefab: {fileID: 593900379093054778, guid: 70933fa08a44568479e39408cfca7025, type: 3}
+  bossPrefab: {fileID: 1184813448204539293, guid: 024ba0249884917479ebc9c4c35d097b, type: 3}
   currentRound: 0
   SpawnPoint: {x: -42, y: 15, z: -1}
   enemyAmountToSpawn: 50
