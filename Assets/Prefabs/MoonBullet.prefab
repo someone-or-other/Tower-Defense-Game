@@ -176,7 +176,7 @@ MonoBehaviour:
   speed: 5
   direction: {x: 0, y: 0, z: 0}
   damage: 4
-  laser: {fileID: 8300000, guid: 1b693053181ef524fbc11002e5763bd9, type: 3}
+  laser: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
 --- !u!114 &6096560085478590231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,8 +193,8 @@ MonoBehaviour:
   m_LightType: 2
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.7411765, g: 0.8743536, b: 1, a: 1}
-  m_Intensity: 2
+  m_Color: {r: 0.76862746, g: 0.654902, b: 1, a: 1}
+  m_Intensity: 0.56
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 1
   m_ApplyToSortingLayers: 00000000
