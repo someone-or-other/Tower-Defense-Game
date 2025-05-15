@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,12 +35,14 @@ public class GameManager : MonoBehaviour
     public float minSpawnTime = 1f;
     public float maxSpawnTime = 3f;
 
-    private bool isGameOver;
+    private bool isGameOver = true;
 
     private EnemyBehavior speedBehavior;
     private EnemyBehavior heavyBehavior;
     private EnemyBehavior supportBehavior;
     private EnemyBehavior basicBehavior;
+
+    public TMP_Text roundText;
 
     private int round = 0;
 
@@ -46,7 +50,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         livesCounter = GameObject.Find("LivesCounter").GetComponent<LivesCounterBehavior>();
-        StartCoroutine("SpawnEnemies", enemyAmountToSpawn);
+        roundText.text = "Round: " + round.ToString();
+        //StartCoroutine("SpawnEnemies", enemyAmountToSpawn);
     }
 
     IEnumerator SpawnEnemies(int number)
@@ -90,14 +95,12 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(timeToWait);
         }
 
-        isGameOver = false;
-
         while (!isGameOver)
         {
             if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
             {
                 isGameOver = true;
-                round++;
+
                 yield return new WaitForSeconds(10);
             }
             else
@@ -125,15 +128,18 @@ public class GameManager : MonoBehaviour
     {
         isAreaAllowed = false;
     }
-    private void Update()
+
+    public void nextRound()
     {
         if (isGameOver)
         {
+            isGameOver = false;
             Debug.Log("Skib New Round");
             enemyAmountToSpawn += 10;
             // minSpawnTime += 1f;
+            round++;
+            roundText.text = "Round: " + round.ToString();
             StartCoroutine("SpawnEnemies", enemyAmountToSpawn);
-            isGameOver = false;
         }
     }
 }
