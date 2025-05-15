@@ -1563,6 +1563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 0}
   PlaceTowerBehaviorScript: {fileID: 0}
+  moneyCounter: {fileID: 0}
   priceText: {fileID: 9030648}
   price: 1200
   towerPrefab: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
@@ -2997,6 +2998,8 @@ MonoBehaviour:
   speedEnemyPrefab: {fileID: 1184813448204539293, guid: c8aebdf9e6111834f88487c0b104dce2, type: 3}
   heavyEnemyPrefab: {fileID: 1184813448204539293, guid: 6866f29bf45abb84da7b2af676f4b4b8, type: 3}
   supportEnemyPrefab: {fileID: 593900379093054778, guid: 70933fa08a44568479e39408cfca7025, type: 3}
+  bossPrefab: {fileID: 1184813448204539293, guid: 024ba0249884917479ebc9c4c35d097b, type: 3}
+  currentRound: 0
   SpawnPoint: {x: -42, y: 15, z: -1}
   enemyAmountToSpawn: 50
   basicEnemiesSpawned: 0
@@ -3005,6 +3008,7 @@ MonoBehaviour:
   supportEnemiesSpawned: 0
   minSpawnTime: 1
   maxSpawnTime: 3
+  roundText: {fileID: 0}
 --- !u!4 &2136692939
 Transform:
   m_ObjectHideFlags: 0
