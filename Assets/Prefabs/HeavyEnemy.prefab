@@ -168,4 +168,7 @@ MonoBehaviour:
   speed: 1
   enemyDamagePower: 10
   enemyMoneyValue: 75
+  initialMoney: 10
   health: 10
+  bonusPerRound: 25
+  deathSFX: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}

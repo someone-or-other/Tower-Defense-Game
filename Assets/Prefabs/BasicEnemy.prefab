@@ -171,3 +171,4 @@ MonoBehaviour:
   initialMoney: 10
   health: 5
   bonusPerRound: 25
+  deathSFX: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}

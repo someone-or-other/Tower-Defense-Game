@@ -18,6 +18,9 @@ public class EnemyBehavior : MonoBehaviour
 
     public float bonusPerRound = 25f;
 
+    private AudioSource source;
+    public AudioClip deathSFX;
+
     public void updateMoney(int round)
     {
         enemyMoneyValue += (int) (bonusPerRound * round);
@@ -26,6 +29,7 @@ public class EnemyBehavior : MonoBehaviour
 
     private void Start()
     {
+        source = GameObject.Find("Audio").GetComponent<AudioSource>();
         initialMoney = enemyMoneyValue;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         moneyCounter = GameObject.Find("MoneyCounter").GetComponent<MoneyCounterBehavior>();
@@ -62,6 +66,7 @@ public class EnemyBehavior : MonoBehaviour
             if (health - other.GetComponent<BulletBehavior>().damage <= 0)
             {
                 moneyCounter.ChangeMoney(Random.Range(enemyMoneyValue, enemyMoneyValue + 50));
+                source.PlayOneShot(deathSFX);
                 Destroy(gameObject);
             }
             health -= other.GetComponent<BulletBehavior>().damage;

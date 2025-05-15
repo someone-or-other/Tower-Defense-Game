@@ -167,8 +167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   enemyDamagePower: 3
-  enemyMoneyValue: 50
+  enemyMoneyValue: 250
+  initialMoney: 10
   health: 2
-  scaleWithTime: 0
-  enemyBonus: 0
-  bonusMult: 0.01
+  bonusPerRound: 25
+  deathSFX: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}

@@ -169,10 +169,10 @@ MonoBehaviour:
   speed: 3
   enemyDamagePower: 2
   enemyMoneyValue: 50
+  initialMoney: 10
   health: 4
-  scaleWithTime: 0
-  enemyBonus: 0
-  bonusMult: 0.01
+  bonusPerRound: 25
+  deathSFX: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
 --- !u!1 &7720797900335637871
 GameObject:
   m_ObjectHideFlags: 0
