@@ -1299,6 +1299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 73482953}
   PlaceTowerBehaviorScript: {fileID: -4210709006837578251, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
+  moneyCounter: {fileID: 0}
   priceText: {fileID: 658244754}
   price: 0
   towerPrefab: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
@@ -1484,6 +1485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 73482953}
   PlaceTowerBehaviorScript: {fileID: -4210709006837578251, guid: 1cf1d85ab68060941b26aad7950efb1c, type: 3}
+  moneyCounter: {fileID: 0}
   priceText: {fileID: 658244754}
   price: 0
   towerPrefab: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
@@ -2426,6 +2428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 73482953}
   PlaceTowerBehaviorScript: {fileID: -4210709006837578251, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
+  moneyCounter: {fileID: 0}
   priceText: {fileID: 658244754}
   price: 0
   towerPrefab: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
@@ -3049,6 +3052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 0}
   PlaceTowerBehaviorScript: {fileID: 0}
+  moneyCounter: {fileID: 0}
   priceText: {fileID: 1887111366}
   price: 1200
   towerPrefab: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
@@ -4178,10 +4182,10 @@ MonoBehaviour:
   - {x: 22, y: 11, z: -1}
   - {x: 23, y: -15, z: -1}
   - {x: 42, y: -15, z: -1}
-  basicEnemyPrefab: {fileID: 1184813448204539293, guid: 3e0b9897a8935554b8d9b958ad92b297, type: 3}
+  basicEnemyPrefab: {fileID: 1184813448204539293, guid: 31b5a7558c2114145910e23af2f7f080, type: 3}
   speedEnemyPrefab: {fileID: 1184813448204539293, guid: c8aebdf9e6111834f88487c0b104dce2, type: 3}
   heavyEnemyPrefab: {fileID: 1184813448204539293, guid: 6866f29bf45abb84da7b2af676f4b4b8, type: 3}
-  supportEnemyPrefab: {fileID: 0}
+  supportEnemyPrefab: {fileID: 593900379093054778, guid: 70933fa08a44568479e39408cfca7025, type: 3}
   currentRound: 0
   SpawnPoint: {x: -42, y: 15, z: -1}
   enemyAmountToSpawn: 50
@@ -4191,6 +4195,7 @@ MonoBehaviour:
   supportEnemiesSpawned: 0
   minSpawnTime: 1
   maxSpawnTime: 3
+  roundText: {fileID: 161641462}
 --- !u!4 &1659543281
 Transform:
   m_ObjectHideFlags: 0
@@ -4865,7 +4870,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1848881202}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1659543280}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: nextRound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1848881202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5926,6 +5943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BuyTowerButtonBehaviorScript: {fileID: 73482953}
   PlaceTowerBehaviorScript: {fileID: -4210709006837578251, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
+  moneyCounter: {fileID: 1938875573}
   priceText: {fileID: 658244754}
   price: 10
   towerPrefab: {fileID: 754080005264930440, guid: 7ed877310cda4fd4fbda7d1eece8d20f, type: 3}
