@@ -7,7 +7,7 @@ public class BuyTowerBehavior : MonoBehaviour
 {
     public BuyTowerButtonBehavior BuyTowerButtonBehaviorScript;
     public PlaceTowerBehavior PlaceTowerBehaviorScript;
-    MoneyCounterBehavior moneyCounter;
+    public MoneyCounterBehavior moneyCounter;
 
     public TMP_Text priceText;
     public int price;
@@ -18,8 +18,9 @@ public class BuyTowerBehavior : MonoBehaviour
     private void Start()
     {
         
-        moneyCounter = GameObject.Find("MoneyCounterText").GetComponent<MoneyCounterBehavior>();
+        //moneyCounter = GameObject.Find("MoneyCounterText").GetComponent<MoneyCounterBehavior>();
         priceText.text = "$" + price;
+        Debug.Log(gameObject.name);
     }
 
     public void OnClick()
