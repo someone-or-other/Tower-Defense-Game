@@ -22,7 +22,6 @@ public class PlaceTowerBehavior : MonoBehaviour
     {
         buyMoonTowerBehaviorGameObject = GameObject.Find("ButtonMoonEmpty").GetComponent<BuyTowerBehavior>();
         buySparkTowerBehaviorGameObject = GameObject.Find("ButtonSparkEmpty").GetComponent<BuyTowerBehavior>();
-        buyShadowTowerBehaviorGameObject = GameObject.Find("ButtonShadowEmpty").GetComponent<BuyTowerBehavior>();
         buyRayTowerBehaviorGameObject = GameObject.Find("ButtonRayEmpty").GetComponent<BuyTowerBehavior>();
         float x = Input.mousePosition.x;
         float y = Input.mousePosition.y;
