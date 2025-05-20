@@ -35,7 +35,7 @@ public class ModTowerBehavior : MonoBehaviour
 
     void Awake()
     {
-        moneyCounter = GameObject.Find("MoneyCounter").GetComponent<MoneyCounterBehavior>();
+        moneyCounter = GameObject.Find("MoneyCounterText").GetComponent<MoneyCounterBehavior>();
         menuImage = GetComponent<Image>();
         TowerBehavior.modTowerMenu = this.gameObject;
         gameObject.SetActive(false);
