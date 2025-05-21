@@ -45,12 +45,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BG
+    uniqueID: 98600547
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Tower
     uniqueID: 114529021
-    locked: 0
-  - name: BG
-    uniqueID: 98600547
     locked: 0

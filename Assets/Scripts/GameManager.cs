@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Vector3[] waypoints;
-    private LivesCounterBehavior livesCounter;
+    public LivesCounterBehavior livesCounter;
 
     private bool isAreaAllowed;
 
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        livesCounter = GameObject.Find("LivesCounter").GetComponent<LivesCounterBehavior>();
+       
         roundText.text = "Round: " + round.ToString();
         //StartCoroutine("SpawnEnemies", enemyAmountToSpawn);
     }
