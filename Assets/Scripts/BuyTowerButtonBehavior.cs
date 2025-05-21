@@ -9,6 +9,7 @@ public class BuyTowerButtonBehavior : MonoBehaviour
     public PlaceTowerBehavior PlaceShadowTowerBehavior;
     public PlaceTowerBehavior PlaceRayTowerBehavior;
     public GameObject buyMenu;
+    public GameObject buyingPanel;
     void Start()
     {
         buyMenu.SetActive(false);
@@ -29,8 +30,8 @@ public class BuyTowerButtonBehavior : MonoBehaviour
 
     public void PressButtonExitBuy()
     {
-        Debug.Log("close menu");
         buyMenu.SetActive(false);
+        Debug.Log("close menu");
         Time.timeScale = 1.0f;
     }
 }

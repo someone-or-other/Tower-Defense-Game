@@ -37,6 +37,7 @@ public class PlaceTowerBehavior : MonoBehaviour
             {
                 Debug.Log("placed");
                 buyMoonTowerBehaviorGameObject.BuyTowerButtonBehaviorScript.buyMenu.SetActive(true);
+                buyMoonTowerBehaviorGameObject.BuyTowerButtonBehaviorScript.buyingPanel.SetActive(false);
             }
             hasPlacedTower = true;
 

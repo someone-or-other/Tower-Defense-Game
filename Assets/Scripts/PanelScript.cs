@@ -22,6 +22,7 @@ public class PanelScript : MonoBehaviour
             gameObject.SetActive(false);
 
         }
+
     }
     void Start()
     {
