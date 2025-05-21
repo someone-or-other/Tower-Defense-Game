@@ -3106,6 +3106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 643210439}
   - component: {fileID: 643210441}
+  - component: {fileID: 643210442}
   - component: {fileID: 643210440}
   m_Layer: 5
   m_Name: LivesCounterText
@@ -3230,6 +3231,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643210438}
   m_CullTransparentMesh: 1
+--- !u!114 &643210442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643210438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358c7ee0f409fdc46b2c6d08ed4cee40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLives: 100
 --- !u!1 &647550532
 GameObject:
   m_ObjectHideFlags: 0
@@ -7582,6 +7596,7 @@ MonoBehaviour:
   - {x: 22, y: 11, z: -1}
   - {x: 23, y: -15, z: -1}
   - {x: 42, y: -15, z: -1}
+  livesCounter: {fileID: 643210442}
   basicEnemyPrefab: {fileID: 1184813448204539293, guid: 31b5a7558c2114145910e23af2f7f080, type: 3}
   speedEnemyPrefab: {fileID: 1184813448204539293, guid: c8aebdf9e6111834f88487c0b104dce2, type: 3}
   heavyEnemyPrefab: {fileID: 1184813448204539293, guid: 6866f29bf45abb84da7b2af676f4b4b8, type: 3}
@@ -10646,7 +10661,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 98600547
-  m_SortingLayer: 2
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ba7f91dd07990084aabf12f15a696fda, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

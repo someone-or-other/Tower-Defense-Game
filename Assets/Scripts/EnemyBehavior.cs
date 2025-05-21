@@ -32,7 +32,7 @@ public class EnemyBehavior : MonoBehaviour
         source = GameObject.Find("Audio").GetComponent<AudioSource>();
         initialMoney = enemyMoneyValue;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
-        moneyCounter = GameObject.Find("MoneyCounter").GetComponent<MoneyCounterBehavior>();
+        moneyCounter = GameObject.Find("MoneyCounterText").GetComponent<MoneyCounterBehavior>();
         waypoints = gameManager.waypoints;
     }
 
