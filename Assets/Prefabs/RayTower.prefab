@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeLevel: 0
-  rangeRadius: 40
+  rangeRadius: 70
   reloadTime: 10
   bulletPrefab: {fileID: 6779390260326347859, guid: 2899bc614cc83964aad655cabd87944d, type: 3}
   targetFarthest: 1
