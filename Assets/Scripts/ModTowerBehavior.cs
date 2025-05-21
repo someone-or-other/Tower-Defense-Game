@@ -33,11 +33,28 @@ public class ModTowerBehavior : MonoBehaviour
     private int currentUpgradePrice;
     private int currentSellPrice;
 
+    
+
     void Awake()
     {
         moneyCounter = GameObject.Find("MoneyCounterText").GetComponent<MoneyCounterBehavior>();
         menuImage = GetComponent<Image>();
-        TowerBehavior.modTowerMenu = this.gameObject;
+        if (this.gameObject.name == "moonUpgradePanel")
+        {
+            TowerBehavior.modTowerMenuMoon = this.gameObject;
+            gameObject.SetActive(false);
+        }
+        if (this.gameObject.name == "sparkUpgradePanel")
+        {
+            TowerBehavior.modTowerMenuSpark = this.gameObject;
+            gameObject.SetActive(false);
+        }
+        if (this.gameObject.name == "rayUpgradePanel")
+        {
+            TowerBehavior.modTowerMenuRay = this.gameObject;
+            gameObject.SetActive(false);
+
+        }
         gameObject.SetActive(false);
     }
     private void OnEnable()
