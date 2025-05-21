@@ -6,7 +6,6 @@ public class BuyTowerButtonBehavior : MonoBehaviour
 {
     public PlaceTowerBehavior PlaceMoonTowerBehavior;
     public PlaceTowerBehavior PlaceSparkTowerBehavior;
-    public PlaceTowerBehavior PlaceShadowTowerBehavior;
     public PlaceTowerBehavior PlaceRayTowerBehavior;
     public GameObject buyMenu;
     public GameObject buyingPanel;

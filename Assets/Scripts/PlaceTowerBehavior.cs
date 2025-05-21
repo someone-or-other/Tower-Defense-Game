@@ -12,6 +12,7 @@ public class PlaceTowerBehavior : MonoBehaviour
     private BuyTowerBehavior buySparkTowerBehaviorGameObject;
     private BuyTowerBehavior buyShadowTowerBehaviorGameObject;
     private BuyTowerBehavior buyRayTowerBehaviorGameObject;
+    int thisTower = 0;
 
 
     void Start()
@@ -20,9 +21,22 @@ public class PlaceTowerBehavior : MonoBehaviour
     }
     void Update()
     {
-        buyMoonTowerBehaviorGameObject = GameObject.Find("ButtonMoonEmpty").GetComponent<BuyTowerBehavior>();
-        buySparkTowerBehaviorGameObject = GameObject.Find("ButtonSparkEmpty").GetComponent<BuyTowerBehavior>();
-        buyRayTowerBehaviorGameObject = GameObject.Find("ButtonRayEmpty").GetComponent<BuyTowerBehavior>();
+        if (gameObject.name == "MoonTower(Clone)")
+        {
+            thisTower = 1;
+            buyMoonTowerBehaviorGameObject = GameObject.Find("ButtonMoonEmpty").GetComponent<BuyTowerBehavior>();
+
+        }
+        if (gameObject.name == "SparkTower(Clone)")
+        {
+            buySparkTowerBehaviorGameObject = GameObject.Find("ButtonSparkEmpty").GetComponent<BuyTowerBehavior>();
+            thisTower = 2;
+        }
+        if (gameObject.name == "RayTower(Clone)")
+        {
+            buyRayTowerBehaviorGameObject = GameObject.Find("ButtonRayEmpty").GetComponent<BuyTowerBehavior>();
+            thisTower = 3;
+        }
         float x = Input.mousePosition.x;
         float y = Input.mousePosition.y;
 
@@ -32,12 +46,29 @@ public class PlaceTowerBehavior : MonoBehaviour
         {
             GetComponent<TowerBehavior>().enabled = true;
             gameObject.AddComponent<BoxCollider2D>();
-            isPlacingTower = buyMoonTowerBehaviorGameObject.GetIsPlacingTower();
+            if (thisTower == 1)
+            {
+                isPlacingTower = buyMoonTowerBehaviorGameObject.GetIsPlacingTower();
+                buyMoonTowerBehaviorGameObject.BuyTowerButtonBehaviorScript.buyMenu.SetActive(true);
+                buyMoonTowerBehaviorGameObject.BuyTowerButtonBehaviorScript.buyingPanel.SetActive(false);
+            }
+            if (thisTower == 2)
+            {
+                isPlacingTower = buySparkTowerBehaviorGameObject.GetIsPlacingTower();
+                buySparkTowerBehaviorGameObject.BuyTowerButtonBehaviorScript.buyMenu.SetActive(true);
+                buySparkTowerBehaviorGameObject.BuyTowerButtonBehaviorScript.buyingPanel.SetActive(false);
+            }
+            if (thisTower == 3)
+            {
+                isPlacingTower = buyRayTowerBehaviorGameObject.GetIsPlacingTower();
+                buyRayTowerBehaviorGameObject.BuyTowerButtonBehaviorScript.buyMenu.SetActive(true);
+                buyRayTowerBehaviorGameObject.BuyTowerButtonBehaviorScript.buyingPanel.SetActive(false);
+            }
+
             if (isPlacingTower)
             {
                 Debug.Log("placed");
-                buyMoonTowerBehaviorGameObject.BuyTowerButtonBehaviorScript.buyMenu.SetActive(true);
-                buyMoonTowerBehaviorGameObject.BuyTowerButtonBehaviorScript.buyingPanel.SetActive(false);
+
             }
             hasPlacedTower = true;
 

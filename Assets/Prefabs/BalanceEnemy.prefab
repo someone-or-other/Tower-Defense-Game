@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1925210674766190742}
   - component: {fileID: 665884419448693854}
   - component: {fileID: -7658990234603941684}
-  - component: {fileID: -7548772823581233095}
+  - component: {fileID: 4441190388331489013}
   m_Layer: 0
   m_Name: BalanceEnemy
   m_TagString: Enemy
@@ -105,8 +105,8 @@ MonoBehaviour:
   health: 8
   bonusPerRound: 25
   deathSFX: {fileID: 0}
---- !u!68 &-7548772823581233095
-EdgeCollider2D:
+--- !u!70 &4441190388331489013
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -137,34 +137,6 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -2.317226, y: -0.58640003}
-  - {x: -2.3145142, y: 0.39310217}
-  - {x: -1.9558444, y: 0.77845097}
-  - {x: -1.5669789, y: 1.1160636}
-  - {x: -1.176733, y: 1.2934661}
-  - {x: -0.89270973, y: 1.4134288}
-  - {x: 0.91302013, y: 1.4033628}
-  - {x: 1.3233004, y: 1.2200737}
-  - {x: 1.6773496, y: 1.0266256}
-  - {x: 1.8795571, y: 0.8153057}
-  - {x: 2.0901332, y: 0.6213045}
-  - {x: 2.303153, y: 0.39966106}
-  - {x: 2.3175058, y: -0.6112957}
-  - {x: 2.0990953, y: -0.80223083}
-  - {x: 1.9127903, y: -0.9817672}
-  - {x: 1.7099295, y: -1.2064695}
-  - {x: 1.3130746, y: -1.3998079}
-  - {x: 0.9011421, y: -1.6256523}
-  - {x: -0.89843893, y: -1.6117382}
-  - {x: -1.3149133, y: -1.4181089}
-  - {x: -1.709024, y: -1.2036562}
-  - {x: -1.8997707, y: -1.0146952}
-  - {x: -2.2900286, y: -0.61623096}
-  - {x: -2.3165107, y: -0.58359027}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_Offset: {x: 0.0000043085847, y: -0.106976636}
+  m_Size: {x: 4.643486, y: 3.0747547}
+  m_Direction: 1

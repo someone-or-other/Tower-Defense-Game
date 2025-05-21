@@ -176,7 +176,7 @@ MonoBehaviour:
   speed: 0.5
   direction: {x: -50, y: -50, z: 0}
   damage: 2
-  laser: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
+  laser: {fileID: 8300000, guid: ca2ba27e67ed26a48b15b005c0934d7d, type: 3}
 --- !u!95 &5474808929695354659
 Animator:
   serializedVersion: 5

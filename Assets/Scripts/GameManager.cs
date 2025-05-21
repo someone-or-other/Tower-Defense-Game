@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public Vector3[] waypoints;
-    private LivesCounterBehavior livesCounter;
+    public LivesCounterBehavior livesCounter;
 
     private bool isAreaAllowed;
 
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        livesCounter = GameObject.Find("LivesCounter").GetComponent<LivesCounterBehavior>();
+       
         roundText.text = "Round: " + round.ToString();
         //StartCoroutine("SpawnEnemies", enemyAmountToSpawn);
     }
@@ -73,8 +73,17 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < number; i++)
         {
-            int random = Random.Range(0, round/2 + 1);
-            Debug.Log(random);
+            int random;
+            if (round > 3)
+            {
+                random = Random.Range(1, 7);
+            }
+            else
+            {
+                random = Random.Range(1, round * 2);
+            }
+             
+            Debug.Log("Random Num: " + random + "\nRound: " + round);
             if (random == 1 && speedEnemiesSpawned < speedEnemyCap)
             {
                 Instantiate(speedEnemyPrefab, SpawnPoint, Quaternion.identity);
@@ -145,7 +154,7 @@ public class GameManager : MonoBehaviour
         {
             isGameOver = false;
             Debug.Log("Skib New Round");
-            enemyAmountToSpawn += 10;
+            enemyAmountToSpawn += 5;
             // minSpawnTime += 1f;
             round++;
             roundText.text = "Round: " + round.ToString();
