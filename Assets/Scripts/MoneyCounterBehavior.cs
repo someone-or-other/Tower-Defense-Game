@@ -5,7 +5,7 @@ using TMPro;
 public class MoneyCounterBehavior : MonoBehaviour
 {
     private TMP_Text moneyText;
-    private int money = 3000;
+    private int money = 2000;
 
     // Start is called before the first frame update
     void Start()
