@@ -173,10 +173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aef8de4618e9094880f766872acafa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 28
   direction: {x: 0, y: 0, z: 0}
   damage: 5
-  laser: {fileID: 0}
+  laser: {fileID: 8300000, guid: 1b693053181ef524fbc11002e5763bd9, type: 3}
 --- !u!114 &1017369188948918206
 MonoBehaviour:
   m_ObjectHideFlags: 0
