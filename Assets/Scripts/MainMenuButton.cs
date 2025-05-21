@@ -15,6 +15,7 @@ public class MainMenuButton : MonoBehaviour
     public Button startButton;
     public Button quitButton;
     public TMP_Text title;
+    public GameObject background;
 
     public void Start()
     {
@@ -26,6 +27,7 @@ public class MainMenuButton : MonoBehaviour
         startButton.gameObject.SetActive(true);
         quitButton.gameObject.SetActive(true);
         title.enabled = true;
+        background.GetComponent<Animator>().Play("ZoomInOut");
     }
     public void MainMenuButtonClicked()
     {
@@ -60,4 +62,5 @@ public class MainMenuButton : MonoBehaviour
     {
         Application.Quit();
     }
+    
 }
