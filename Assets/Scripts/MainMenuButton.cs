@@ -13,6 +13,7 @@ public class MainMenuButton : MonoBehaviour
     public Button closeCreditsButton;
     public Button openCreditsButton;
     public Button startButton;
+    public Button quitButton;
     public TMP_Text title;
 
     public void Start()
@@ -23,6 +24,7 @@ public class MainMenuButton : MonoBehaviour
         closeCreditsButton.gameObject.SetActive(false);
         openCreditsButton.gameObject.SetActive(true);
         startButton.gameObject.SetActive(true);
+        quitButton.gameObject.SetActive(true);
         title.enabled = true;
     }
     public void MainMenuButtonClicked()
@@ -38,6 +40,7 @@ public class MainMenuButton : MonoBehaviour
         closeCreditsButton.gameObject.SetActive(true);
         openCreditsButton.gameObject.SetActive(false);
         startButton.gameObject.SetActive(false);
+        quitButton.gameObject.SetActive(false);
         title.enabled = false;
     }
 
@@ -49,6 +52,12 @@ public class MainMenuButton : MonoBehaviour
         closeCreditsButton.gameObject.SetActive(false);
         openCreditsButton.gameObject.SetActive(true);
         startButton.gameObject.SetActive(true);
+        quitButton.gameObject.SetActive(true);
         title.enabled = true;
+    }
+
+    public void QuitButtonClicked()
+    {
+        Application.Quit();
     }
 }
