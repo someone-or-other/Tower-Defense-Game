@@ -76,9 +76,7 @@ public class TowerBehavior : MonoBehaviour
 
     public void Start()
     {
-        moonPanel.SetActive(false);
-        rayPanel.SetActive(false);
-        sparkPanel.SetActive(false);
+        
     }
 
     public void Upgrade()
