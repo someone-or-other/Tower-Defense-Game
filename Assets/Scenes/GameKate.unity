@@ -7601,7 +7601,7 @@ MonoBehaviour:
   bossPrefab: {fileID: 1184813448204539293, guid: 024ba0249884917479ebc9c4c35d097b, type: 3}
   currentRound: 0
   SpawnPoint: {x: -42, y: 15, z: -1}
-  enemyAmountToSpawn: 50
+  enemyAmountToSpawn: 0
   basicEnemiesSpawned: 0
   speedEnemiesSpawned: 0
   heavyEnemiesSpawned: 0

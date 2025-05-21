@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     public int currentRound = 0;
     public Vector3 SpawnPoint;
 
-    public int enemyAmountToSpawn = 25;
+    public int enemyAmountToSpawn = 5;
     public int basicEnemiesSpawned = 0;
     public int speedEnemiesSpawned = 0;
     public int heavyEnemiesSpawned = 0;
@@ -84,17 +84,17 @@ public class GameManager : MonoBehaviour
             }
              
             Debug.Log("Random Num: " + random + "\nRound: " + round);
-            if (random == 1 && speedEnemiesSpawned < speedEnemyCap)
+            if (random == 2 && speedEnemiesSpawned < speedEnemyCap)
             {
                 Instantiate(speedEnemyPrefab, SpawnPoint, Quaternion.identity);
                 speedEnemiesSpawned++;
             }
-            else if (random == 2 && heavyEnemiesSpawned < heavyEnemyCap)
+            else if (random == 3 && heavyEnemiesSpawned < heavyEnemyCap)
             {
                 Instantiate(heavyEnemyPrefab, SpawnPoint, Quaternion.identity);
                 heavyEnemiesSpawned++;
             }
-            else if (random < 4 && supportEnemiesSpawned < supportEnemyCap)
+            else if (random == 4 && supportEnemiesSpawned < supportEnemyCap)
             {
                 Instantiate(supportEnemyPrefab, SpawnPoint, Quaternion.identity);
                 supportEnemiesSpawned++;
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
                 Instantiate(bossPrefab, SpawnPoint, Quaternion.identity);
                 bossCap = true;
             }
-            else
+            else if (random == 1)
             {
                 Instantiate(basicEnemyPrefab, SpawnPoint, Quaternion.identity);
             }
