@@ -176,7 +176,7 @@ MonoBehaviour:
   speed: 20
   direction: {x: 0, y: 0, z: 0}
   damage: 10
-  laser: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
+  laser: {fileID: 8300000, guid: 1b693053181ef524fbc11002e5763bd9, type: 3}
 --- !u!114 &1017369188948918206
 MonoBehaviour:
   m_ObjectHideFlags: 0
