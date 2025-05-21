@@ -1431,9 +1431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Current
-
-    Round: '
+  m_text: 'Round: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1e156966af8d414bbe6c474144c8222, type: 2}
   m_sharedMaterial: {fileID: -5738294055040641441, guid: c1e156966af8d414bbe6c474144c8222, type: 2}
