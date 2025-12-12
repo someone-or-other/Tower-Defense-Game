@@ -146,7 +146,8 @@ public class GameManager : MonoBehaviour
             isDead = true;
             Debug.Log("Time Scale: 1");
             StopCoroutine("SpawnEnemies");
-            Time.timeScale = 1;
+            Time.timeScale = 0;
+
 
         }
     }
