@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -143,8 +144,8 @@ public class GameManager : MonoBehaviour
         if (livesCounter.GetLives() <= 0)
         {
             isDead = true;
-            StopCoroutine("SpawnEnemies");
             Debug.Log("Time Scale: 1");
+            StopCoroutine("SpawnEnemies");
             Time.timeScale = 1;
 
         }
@@ -179,7 +180,7 @@ public class GameManager : MonoBehaviour
         else
         {
             speedCycleVar++;
-            if(speedCycleVar % 3 == 1)
+            if (speedCycleVar % 3 == 1)
             {
                 Time.timeScale = 2;
                 Debug.Log("Time Scale: 2");
@@ -190,6 +191,13 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 3;
             }
         }
-
+        
+    }
+    public void QuickDie()
+    {
+        int tempVar = livesCounter.GetLives();
+        tempVar = 5;
+        livesCounter.LoseLife(100 - tempVar);
+        Time.timeScale = 10;
     }
 }

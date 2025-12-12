@@ -14,6 +14,12 @@ public class LivesCounterBehavior : MonoBehaviour
     {
         return lives;
     }
+
+    public void SetLives(int livesVar)
+    {
+        lives = livesVar;
+    }
+
     void Start()
     {
         lives = maxLives;
