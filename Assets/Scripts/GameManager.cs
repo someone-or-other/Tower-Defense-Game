@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     public Vector3[] waypoints;
     public LivesCounterBehavior livesCounter;
 
+    private int speedCycleVar = 0;
     private bool isAreaAllowed;
 
     public bool GetIsAreaAllowed()
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
     public float maxSpawnTime = 3f;
 
     private bool isGameOver = true;
+    private bool isDead = false;
 
     private EnemyBehavior speedBehavior;
     private EnemyBehavior heavyBehavior;
@@ -52,9 +55,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+       isDead = false;
         roundText.text = "Round: " + round.ToString();
         //StartCoroutine("SpawnEnemies", enemyAmountToSpawn);
+        speedCycleVar = 0;
     }
 
     IEnumerator SpawnEnemies(int number)
@@ -83,7 +87,6 @@ public class GameManager : MonoBehaviour
                 random = Random.Range(1, round * 2);
             }
              
-            Debug.Log("Random Num: " + random + "\nRound: " + round);
             if (random == 2 && speedEnemiesSpawned < speedEnemyCap)
             {
                 Instantiate(speedEnemyPrefab, SpawnPoint, Quaternion.identity);
@@ -110,15 +113,19 @@ public class GameManager : MonoBehaviour
             }
             float ratio = i * 1f / (number - 1);
             float timeToWait = Mathf.Lerp(minSpawnTime, maxSpawnTime, 1-ratio);
-            Debug.Log(timeToWait);
             yield return new WaitForSeconds(timeToWait);
         }
         bossCap = false;
         while (!isGameOver)
         {
-            if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+            if(isDead)
+            {
+                Debug.Log("Died");
+            }
+            else if(GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
             {
                 isGameOver = true;
+                speedCycleVar = 0;
 
                 yield return new WaitForSeconds(1);
             }
@@ -131,10 +138,14 @@ public class GameManager : MonoBehaviour
 
     public void EnemyHasReachedTheFortress(int damage)
     {
+
         livesCounter.LoseLife(damage);
         if (livesCounter.GetLives() <= 0)
         {
+            isDead = true;
             StopCoroutine("SpawnEnemies");
+            Debug.Log("Time Scale: 1");
+            Time.timeScale = 1;
 
         }
     }
@@ -150,15 +161,35 @@ public class GameManager : MonoBehaviour
 
     public void nextRound()
     {
-        if (isGameOver)
+        if (speedCycleVar == 0)
         {
-            isGameOver = false;
-            Debug.Log("Skib New Round");
-            enemyAmountToSpawn += 5;
-            // minSpawnTime += 1f;
-            round++;
-            roundText.text = "Round: " + round.ToString();
-            StartCoroutine("SpawnEnemies", enemyAmountToSpawn);
+            speedCycleVar++;
+            Time.timeScale = 2;
+            Debug.Log("Time Scale: 2");
+            if (isGameOver)
+            {
+                isGameOver = false;
+                enemyAmountToSpawn += 5;
+                // minSpawnTime += 1f;
+                round++;
+                roundText.text = "Round: " + round.ToString();
+                StartCoroutine("SpawnEnemies", enemyAmountToSpawn);
+            }
         }
+        else
+        {
+            speedCycleVar++;
+            if(speedCycleVar % 3 == 1)
+            {
+                Time.timeScale = 2;
+                Debug.Log("Time Scale: 2");
+            }
+            else if (speedCycleVar % 3 == 2)
+            {
+                Debug.Log("Time Scale: 3");
+                Time.timeScale = 3;
+            }
+        }
+
     }
 }
