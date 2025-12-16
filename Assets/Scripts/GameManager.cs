@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     private bool isGameOver = true;
     private bool isDead = false;
+    private int amountToAdd = 1;
 
     private EnemyBehavior speedBehavior;
     private EnemyBehavior heavyBehavior;
@@ -173,7 +174,9 @@ public class GameManager : MonoBehaviour
             if (isGameOver)
             {
                 isGameOver = false;
-                enemyAmountToSpawn += 5;
+                amountToAdd *= 2;
+                enemyAmountToSpawn += amountToAdd;
+                
                 // minSpawnTime += 1f;
                 round++;
                 roundText.text = "Round: " + round.ToString();

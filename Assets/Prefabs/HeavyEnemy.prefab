@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   enemyDamagePower: 10
-  enemyMoneyValue: 75
+  enemyMoneyValue: 200
   initialMoney: 10
   health: 10
   bonusPerRound: 25

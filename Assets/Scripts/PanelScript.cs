@@ -51,6 +51,24 @@ public class PanelScript : MonoBehaviour
 
     }
 
+    public void OnMouseDown()
+    {
+        Debug.Log("MouseDown");
+        if(this.gameObject.name != "PanelMoon")
+        {
+            Debug.Log("not moon panel");
+            if(this.gameObject.name != "PanelRay")
+            {
+                Debug.Log("Not Ray panel");
+                if(this.gameObject.name != "PanelSpark")
+                {
+                    Debug.Log("Not spark tower");
+                    gameObject.SetActive(false);
+                }
+            }
+        }
+    }
+
     void Start()
     {
         

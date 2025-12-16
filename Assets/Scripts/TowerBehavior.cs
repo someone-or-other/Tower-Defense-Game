@@ -126,6 +126,10 @@ public class TowerBehavior : MonoBehaviour
             modTowerMenuMoon.SetActive(true);
             moonPanel.SetActive(true);
         }
+        else
+        {
+            moonPanel.SetActive(false);
+        }
         if (this.gameObject.name == "SparkTower(Clone)")
         {
             Debug.Log("Spark Tower Clicked");
@@ -135,6 +139,10 @@ public class TowerBehavior : MonoBehaviour
             modTowerMenuSpark.SetActive(true);
             sparkPanel.SetActive(true);
         }
+        else
+        {
+            sparkPanel.SetActive(false);
+        }
         if (this.gameObject.name == "RayTower(Clone)")
         {
             Debug.Log("Ray Tower Clicked");
@@ -143,6 +151,10 @@ public class TowerBehavior : MonoBehaviour
             modTowerMenuRay.GetComponent<ModTowerBehavior>().currentTower = this;
             modTowerMenuRay.SetActive(true);
             rayPanel.SetActive(true);
+        }
+        else
+        {
+            rayPanel.SetActive(false);
         }
 
     }
