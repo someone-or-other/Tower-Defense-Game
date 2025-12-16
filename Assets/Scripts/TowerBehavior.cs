@@ -15,7 +15,7 @@ public class TowerBehavior : MonoBehaviour
     public static GameObject sparkPanel;
     public static GameObject rayPanel;
     public bool targetFarthest;
-
+    public GameObject bulletBehaviorObj;
     private float elapsedTime;
 
     void Update()
@@ -76,13 +76,32 @@ public class TowerBehavior : MonoBehaviour
 
     public void Start()
     {
-        
     }
 
     public void Upgrade()
     {
-        rangeRadius += 1f;
-        reloadTime -= 0.5f;
+        if (this.gameObject.name == "MoonTower(Clone)")
+        {
+            Debug.Log("MoonTower upgraded");
+            reloadTime = 2;
+            bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletDamage(4);
+            bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletSpeed(12);
+        }
+        else if (this.gameObject.name == "SparkTower(Clone)")
+        {
+            Debug.Log("SparkTower upgraded");
+            reloadTime = 0.75f;
+            bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletDamage(2);
+            bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletSpeed(20);
+            
+        }
+        else if (this.gameObject.name == "RayTower(Clone)")
+        {
+            Debug.Log("RayTower upgraded");
+            reloadTime = 6;
+            bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletDamage(8);
+            bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletSpeed(28);
+        }
         upgradeLevel++;
         modTowerMenuMoon.SetActive(false);
         modTowerMenuSpark.SetActive(false);

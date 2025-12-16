@@ -10,6 +10,9 @@ public class BulletBehavior : MonoBehaviour
     public int damage = 5;
     private AudioSource source;
     public AudioClip laser;
+    public GameObject rayBullet;
+    public GameObject sparkBullet;
+    public GameObject moonBullet;
 
     private void Start()
     {
@@ -23,5 +26,37 @@ public class BulletBehavior : MonoBehaviour
     private void Update()
     {
         transform.position += direction * Time.deltaTime * speed;
+    }
+
+    public void SetBulletDamage(int damage)
+    {
+        if(this.gameObject.name == "MoonBullet(Clone)")
+        {
+            moonBullet.GetComponent<BulletBehavior>().damage = damage;
+        }
+        else if (this.gameObject.name == "SparkBullet(Clone)")
+        {
+            sparkBullet.GetComponent<BulletBehavior>().damage = damage;
+        }
+        else if (this.gameObject.name == "RayBullet(Clone)")
+        {
+            rayBullet.GetComponent<BulletBehavior>().damage = damage;
+        }
+    }
+
+    public void SetBulletSpeed(int speed)
+    {
+        if (this.gameObject.name == "MoonBullet(Clone)")
+        {
+            moonBullet.GetComponent<BulletBehavior>().speed = speed;
+        }
+        else if (this.gameObject.name == "SparkBullet(Clone)")
+        {
+            sparkBullet.GetComponent<BulletBehavior>().speed = speed;
+        }
+        else if (this.gameObject.name == "RayBullet(Clone)")
+        {
+            rayBullet.GetComponent<BulletBehavior>().speed = speed;
+        }
     }
 }

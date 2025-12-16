@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
     private EnemyBehavior bossBehavior;
 
     public TMP_Text roundText;
+    public DeathPanelScript panelManager;
 
     private int round = 0;
 
@@ -143,6 +144,7 @@ public class GameManager : MonoBehaviour
         livesCounter.LoseLife(damage);
         if (livesCounter.GetLives() <= 0)
         {
+            panelManager.toggleDeathPanel();
             isDead = true;
             Debug.Log("Time Scale: 1");
             StopCoroutine("SpawnEnemies");

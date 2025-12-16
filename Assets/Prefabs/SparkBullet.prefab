@@ -173,10 +173,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aef8de4618e9094880f766872acafa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
+  speed: 15
   direction: {x: 0, y: 0, z: 0}
-  damage: 2
+  damage: 1
   laser: {fileID: 8300000, guid: ca2ba27e67ed26a48b15b005c0934d7d, type: 3}
+  rayBullet: {fileID: 6779390260326347859, guid: 2899bc614cc83964aad655cabd87944d, type: 3}
+  sparkBullet: {fileID: 6779390260326347859}
+  moonBullet: {fileID: 6779390260326347859, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
 --- !u!95 &5474808929695354659
 Animator:
   serializedVersion: 5

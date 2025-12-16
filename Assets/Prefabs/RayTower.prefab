@@ -102,9 +102,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeLevel: 0
   rangeRadius: 70
-  reloadTime: 7
+  reloadTime: 10
   bulletPrefab: {fileID: 6779390260326347859, guid: 2899bc614cc83964aad655cabd87944d, type: 3}
   targetFarthest: 1
+  bulletBehaviorObj: {fileID: 6779390260326347859, guid: 2899bc614cc83964aad655cabd87944d, type: 3}
 --- !u!114 &-4210709006837578251
 MonoBehaviour:
   m_ObjectHideFlags: 0

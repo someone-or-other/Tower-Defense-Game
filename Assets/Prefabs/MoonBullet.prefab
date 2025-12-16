@@ -173,10 +173,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aef8de4618e9094880f766872acafa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 10
   direction: {x: 0, y: 0, z: 0}
-  damage: 4
+  damage: 2
   laser: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
+  rayBullet: {fileID: 6779390260326347859, guid: 2899bc614cc83964aad655cabd87944d, type: 3}
+  sparkBullet: {fileID: 6779390260326347859, guid: aca1b77ea59e64b41bd2fed11ecda0e8, type: 3}
+  moonBullet: {fileID: 6779390260326347859}
 --- !u!114 &6096560085478590231
 MonoBehaviour:
   m_ObjectHideFlags: 0
