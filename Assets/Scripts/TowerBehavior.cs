@@ -20,9 +20,11 @@ public class TowerBehavior : MonoBehaviour
     private float elapsedTime;
     public StatsTextBehavior textBehavior;
     private bool activeTowerExists;
+    private int thisDamage;
 
     void Update()
     {
+        
         if (elapsedTime >= reloadTime) {
             elapsedTime = 0;
             Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, rangeRadius);

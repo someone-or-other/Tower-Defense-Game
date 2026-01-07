@@ -15,7 +15,7 @@ public class StatsTextBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
+        
         if(towerBehavior.TowerExists())
         {
             activeTower = towerBehavior.GetActiveTower();
@@ -32,7 +32,7 @@ public class StatsTextBehavior : MonoBehaviour
 
             }
         }
-        */
+        
     }
         
 }
