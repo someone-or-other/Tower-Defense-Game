@@ -7,6 +7,7 @@ public class TowerBehavior : MonoBehaviour
     public int upgradeLevel = 0;
     public float rangeRadius;
     public float reloadTime;
+    GameObject activeTower;
     public GameObject bulletPrefab;
     public static GameObject modTowerMenuMoon;
     public static GameObject modTowerMenuSpark;
@@ -17,19 +18,21 @@ public class TowerBehavior : MonoBehaviour
     public bool targetFarthest;
     public GameObject bulletBehaviorObj;
     private float elapsedTime;
+    public StatsTextBehavior textBehavior;
+    private bool activeTowerExists;
 
     void Update()
     {
         if (elapsedTime >= reloadTime) {
-        elapsedTime = 0;
-        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, rangeRadius);
-        if (hitColliders.Length != 0)
-        {
+            elapsedTime = 0;
+            Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, rangeRadius);
+            if (hitColliders.Length != 0)
+            {
                 int index = -1;
                 if (!targetFarthest)
                 {
                     float min = int.MaxValue;
-                   
+
                     for (int i = 0; i < hitColliders.Length; i++)
                     {
                         if (hitColliders[i].CompareTag("Enemy"))
@@ -62,14 +65,14 @@ public class TowerBehavior : MonoBehaviour
                 }
 
                 if (index == -1)
-            {
-                return;
+                {
+                    return;
+                }
+                Transform target = hitColliders[index].transform;
+                Vector2 direction = (target.position - transform.position).normalized;
+                GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
+                bullet.GetComponent<BulletBehavior>().direction = direction;
             }
-            Transform target = hitColliders[index].transform;
-            Vector2 direction = (target.position - transform.position).normalized;
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
-            bullet.GetComponent<BulletBehavior>().direction = direction;
-        }
         }
         elapsedTime += Time.deltaTime;
     }
@@ -93,7 +96,7 @@ public class TowerBehavior : MonoBehaviour
             reloadTime = 0.75f;
             bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletDamage(2);
             bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletSpeed(20);
-            
+
         }
         else if (this.gameObject.name == "RayTower(Clone)")
         {
@@ -118,9 +121,14 @@ public class TowerBehavior : MonoBehaviour
         //modTowerMenuRay.SetActive(false);
         if (this.gameObject.name == "MoonTower(Clone)")
         {
+            activeTower = gameObject;
             Debug.Log("Moon Tower Clicked");
             modTowerMenuMoon.SetActive(false);
             moonPanel.SetActive(false);
+            sparkPanel.SetActive(false);
+            rayPanel.SetActive(false);
+            modTowerMenuRay.SetActive(false);
+            modTowerMenuSpark.SetActive(false);
             modTowerMenuMoon.GetComponent<ModTowerBehavior>().currentTower = this;
             Debug.Log("modtowermoon exists");
             modTowerMenuMoon.SetActive(true);
@@ -132,9 +140,14 @@ public class TowerBehavior : MonoBehaviour
         }
         if (this.gameObject.name == "SparkTower(Clone)")
         {
+            activeTower = gameObject;
             Debug.Log("Spark Tower Clicked");
-            modTowerMenuSpark.SetActive(false);
+            modTowerMenuMoon.SetActive(false);
+            moonPanel.SetActive(false);
             sparkPanel.SetActive(false);
+            rayPanel.SetActive(false);
+            modTowerMenuRay.SetActive(false);
+            modTowerMenuSpark.SetActive(false);
             modTowerMenuSpark.GetComponent<ModTowerBehavior>().currentTower = this;
             modTowerMenuSpark.SetActive(true);
             sparkPanel.SetActive(true);
@@ -145,9 +158,14 @@ public class TowerBehavior : MonoBehaviour
         }
         if (this.gameObject.name == "RayTower(Clone)")
         {
+            activeTower = gameObject;
             Debug.Log("Ray Tower Clicked");
-            modTowerMenuRay.SetActive(false);
+            modTowerMenuMoon.SetActive(false);
+            moonPanel.SetActive(false);
+            sparkPanel.SetActive(false);
             rayPanel.SetActive(false);
+            modTowerMenuRay.SetActive(false);
+            modTowerMenuSpark.SetActive(false);
             modTowerMenuRay.GetComponent<ModTowerBehavior>().currentTower = this;
             modTowerMenuRay.SetActive(true);
             rayPanel.SetActive(true);
@@ -158,4 +176,19 @@ public class TowerBehavior : MonoBehaviour
         }
 
     }
+
+    public GameObject GetActiveTower()
+    {
+        return activeTower;
+    }
+
+    public bool TowerExists()
+    {
+        if(activeTowerExists)
+        {
+            return true;
+        }  
+        return false;
+    }
+
 }

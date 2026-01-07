@@ -475,7 +475,7 @@ GameObject:
   - component: {fileID: 86576725}
   - component: {fileID: 86576724}
   m_Layer: 5
-  m_Name: SellPriceText (4)
+  m_Name: SpeedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1913,6 +1913,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230804866}
   m_CullTransparentMesh: 1
+--- !u!1 &241632735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 241632736}
+  - component: {fileID: 241632737}
+  m_Layer: 0
+  m_Name: StatsTextBehavior
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &241632736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241632735}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &241632737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241632735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f4b82e655eb0c4383a4457ab555f31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &266843951
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,7 +1969,7 @@ GameObject:
   - component: {fileID: 266843954}
   - component: {fileID: 266843953}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: UpgradeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4032,7 +4076,7 @@ GameObject:
   - component: {fileID: 713039946}
   - component: {fileID: 713039945}
   m_Layer: 5
-  m_Name: Image
+  m_Name: TowerImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4107,7 +4151,7 @@ GameObject:
   - component: {fileID: 732245908}
   - component: {fileID: 732245907}
   m_Layer: 5
-  m_Name: SellPriceText (1)
+  m_Name: UpgradeAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4637,8 +4681,8 @@ GameObject:
   - component: {fileID: 821333166}
   - component: {fileID: 821333165}
   m_Layer: 5
-  m_Name: SellPriceText (8)
-  m_TagString: Untagged
+  m_Name: RangeStat
+  m_TagString: RangeStat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6289,7 +6333,7 @@ GameObject:
   - component: {fileID: 1116201463}
   - component: {fileID: 1116201462}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: UpgradeBgPanel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7204,8 +7248,8 @@ GameObject:
   - component: {fileID: 1241364459}
   - component: {fileID: 1241364458}
   m_Layer: 5
-  m_Name: SellPriceText (7)
-  m_TagString: Untagged
+  m_Name: SpeedStat
+  m_TagString: SpeedStat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8685,7 +8729,7 @@ GameObject:
   - component: {fileID: 1621156260}
   - component: {fileID: 1621156259}
   m_Layer: 5
-  m_Name: SellPriceText (5)
+  m_Name: RangeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9787,7 +9831,7 @@ GameObject:
   - component: {fileID: 1679028685}
   - component: {fileID: 1679028684}
   m_Layer: 5
-  m_Name: SellPriceText (3)
+  m_Name: DamageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9921,7 +9965,7 @@ GameObject:
   - component: {fileID: 1712905653}
   - component: {fileID: 1712905652}
   m_Layer: 5
-  m_Name: Panel (1)
+  m_Name: UpgradeBgPanel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12094,7 +12138,7 @@ GameObject:
   - component: {fileID: 2039795300}
   - component: {fileID: 2039795299}
   m_Layer: 5
-  m_Name: SellPriceText (2)
+  m_Name: MenuTextStats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12252,10 +12296,10 @@ RectTransform:
   - {fileID: 2039795298}
   - {fileID: 1679028683}
   - {fileID: 2131168634}
-  - {fileID: 1241364457}
-  - {fileID: 821333164}
   - {fileID: 86576723}
+  - {fileID: 1241364457}
   - {fileID: 1621156258}
+  - {fileID: 821333164}
   m_Father: {fileID: 1985607593}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -12788,8 +12832,8 @@ GameObject:
   - component: {fileID: 2131168636}
   - component: {fileID: 2131168635}
   m_Layer: 5
-  m_Name: SellPriceText (6)
-  m_TagString: Untagged
+  m_Name: DamageStat
+  m_TagString: DamageStat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12925,3 +12969,4 @@ SceneRoots:
   - {fileID: 683393230}
   - {fileID: 753641877}
   - {fileID: 2039513770}
+  - {fileID: 241632736}

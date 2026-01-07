@@ -7,7 +7,7 @@ public class BulletBehavior : MonoBehaviour
 {
     public float speed = 1f;
     public Vector3 direction;
-    public int damage = 5;
+    public int damage;
     private AudioSource source;
     public AudioClip laser;
     public GameObject rayBullet;
@@ -22,8 +22,9 @@ public class BulletBehavior : MonoBehaviour
         float angle = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         Destroy(gameObject, 10);
-    }
-    private void Update()
+        damage = 5;
+}
+private void Update()
     {
         transform.position += direction * Time.deltaTime * speed;
     }
@@ -59,4 +60,10 @@ public class BulletBehavior : MonoBehaviour
             rayBullet.GetComponent<BulletBehavior>().speed = speed;
         }
     }
+    /*
+    public int GetBulletDamage()
+    {
+
+    }
+    */
 }

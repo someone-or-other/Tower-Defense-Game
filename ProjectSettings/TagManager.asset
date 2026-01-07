@@ -11,6 +11,9 @@ TagManager:
   - ButtonSpark
   - ButtonShadow
   - ButtonRay
+  - DamageStat
+  - SpeedStat
+  - RangeStat
   layers:
   - Default
   - TransparentFX
