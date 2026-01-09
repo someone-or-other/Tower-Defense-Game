@@ -21,15 +21,24 @@ public class StatsTextBehavior : MonoBehaviour
             activeTower = towerBehavior.GetActiveTower();
             if (CompareTag("DamageStat"))
             {
+                if(activeTower.name == "SparkTower(Clone)")
+                {
 
+                }
             }
             else if (CompareTag("SpeedStat"))
             {
+                if (activeTower.name == "RayTower(Clone)")
+                {
 
+                }
             }
             else if (CompareTag("RangeStat"))
             {
+                if (activeTower.name == "MoonTower(Clone)")
+                {
 
+                }
             }
         }
         
