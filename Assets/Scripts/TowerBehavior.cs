@@ -7,6 +7,8 @@ public class TowerBehavior : MonoBehaviour
     public int upgradeLevel = 0;
     public float rangeRadius;
     public float reloadTime;
+    public float bulletDamage;
+    public float bulletSpeed;
     GameObject activeTower;
     public GameObject bulletPrefab;
     public static GameObject modTowerMenuMoon;
@@ -89,6 +91,9 @@ public class TowerBehavior : MonoBehaviour
         {
             Debug.Log("MoonTower upgraded");
             reloadTime = 2;
+            bulletDamage = 4;
+            bulletSpeed = 12;
+            rangeRadius = 20;
             bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletDamage(4);
             bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletSpeed(12);
         }
@@ -96,6 +101,9 @@ public class TowerBehavior : MonoBehaviour
         {
             Debug.Log("SparkTower upgraded");
             reloadTime = 0.75f;
+            bulletDamage = 2;
+            bulletSpeed = 20;
+            rangeRadius = 12;
             bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletDamage(2);
             bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletSpeed(20);
 
@@ -104,6 +112,9 @@ public class TowerBehavior : MonoBehaviour
         {
             Debug.Log("RayTower upgraded");
             reloadTime = 6;
+            bulletDamage = 8;
+            bulletSpeed = 28;
+            rangeRadius = 90;
             bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletDamage(8);
             bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletSpeed(28);
         }

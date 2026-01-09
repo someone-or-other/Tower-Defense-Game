@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 public class MoneyCounterBehavior : MonoBehaviour
 {
     private TMP_Text moneyText;
     private int money = 2000;
+    
 
     // Start is called before the first frame update
     void Start()

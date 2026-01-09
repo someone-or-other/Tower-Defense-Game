@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StatsTextBehavior : MonoBehaviour
 {
-    TowerBehavior towerBehavior;
+    public TowerBehavior towerBehavior;
     GameObject activeTower;
+    TowerBehavior thisTowerScript;
+    public GameObject damageText;
+    public GameObject speedText;
+    public GameObject rangeText;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,24 +26,21 @@ public class StatsTextBehavior : MonoBehaviour
             activeTower = towerBehavior.GetActiveTower();
             if (CompareTag("DamageStat"))
             {
-                if(activeTower.name == "SparkTower(Clone)")
-                {
-
-                }
+                thisTowerScript = activeTower.GetComponent<TowerBehavior>();
+                damageText.GetComponent<Text>().text = thisTowerScript.bulletDamage.ToString();
             }
             else if (CompareTag("SpeedStat"))
             {
-                if (activeTower.name == "RayTower(Clone)")
-                {
+                thisTowerScript = activeTower.GetComponent<TowerBehavior>();
+                speedText.GetComponent<Text>().text = thisTowerScript.reloadTime.ToString();
 
-                }
             }
             else if (CompareTag("RangeStat"))
             {
-                if (activeTower.name == "MoonTower(Clone)")
-                {
+                thisTowerScript = activeTower.GetComponent<TowerBehavior>();
+                rangeText.GetComponent<Text>().text = thisTowerScript.rangeRadius.ToString();
 
-                }
+
             }
         }
         
