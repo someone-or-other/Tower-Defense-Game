@@ -58,13 +58,13 @@ public class BuyTowerBehavior : MonoBehaviour
     private void Update()
     {
         if(isPlacingTower)
-       // hasPlacedTower = PlaceTowerBehaviorScript.GetFinishPlacingTower();
+
         if (!isPlacingTower)
         {
             BuyTowerButtonBehaviorScript.buyMenu.SetActive(true);
             BuyTowerButtonBehaviorScript.buyingPanel.SetActive(false);
-            //hasPlacedTower = false;
         }
+
     }
 
     public bool GetIsPlacingTower()
@@ -75,8 +75,5 @@ public class BuyTowerBehavior : MonoBehaviour
             return false;
     }
 
-    public bool GetHasPlacedTower()
-    {
-        return hasPlacedTower;
+
     }
-}

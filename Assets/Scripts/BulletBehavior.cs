@@ -60,10 +60,22 @@ private void Update()
             rayBullet.GetComponent<BulletBehavior>().speed = speed;
         }
     }
-    /*
+    
     public int GetBulletDamage()
     {
-
+        if (this.gameObject.name == "MoonBullet(Clone)")
+        {
+            return moonBullet.GetComponent<BulletBehavior>().damage;
+        }
+        else if (this.gameObject.name == "SparkBullet(Clone)")
+        {
+            return sparkBullet.GetComponent<BulletBehavior>().damage;
+        }
+        else if (this.gameObject.name == "RayBullet(Clone)")
+        {
+            return rayBullet.GetComponent<BulletBehavior>().damage;
+        }
+        return 0;
     }
-    */
+    
 }

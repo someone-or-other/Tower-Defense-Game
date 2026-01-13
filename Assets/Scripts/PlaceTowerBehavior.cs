@@ -68,7 +68,7 @@ public class PlaceTowerBehavior : MonoBehaviour
             if (isPlacingTower)
             {
                 Debug.Log("placed");
-
+                TowerBehavior.activeTowerExists = true;
             }
             hasPlacedTower = true;
 

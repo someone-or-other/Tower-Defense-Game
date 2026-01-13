@@ -102,7 +102,7 @@ public class ModTowerBehavior : MonoBehaviour
             moneyCounter.ChangeMoney(-currentUpgradePrice);
             currentTower.Upgrade();
             gameObject.SetActive(false);
-            panelScript.Close();
+            //panelScript.Close();
 
         }
     }
@@ -111,7 +111,7 @@ public class ModTowerBehavior : MonoBehaviour
         moneyCounter.ChangeMoney(currentSellPrice);
         Destroy(currentTower.gameObject);
         gameObject.SetActive(false);
-        panelScript.Close();
+        //panelScript.Close();
     }
 
 }

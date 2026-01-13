@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PanelScript : MonoBehaviour
 {
+    /*
     private void Awake()
     {
         if (this.gameObject.name == "PanelMoon")
@@ -50,7 +51,7 @@ public class PanelScript : MonoBehaviour
 
 
     }
-
+    */
     public void OnMouseDown()
     {
         Debug.Log("MouseDown");

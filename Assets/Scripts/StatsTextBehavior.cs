@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class StatsTextBehavior : MonoBehaviour
 {
-    public TowerBehavior towerBehavior;
     GameObject activeTower;
     TowerBehavior thisTowerScript;
-    public GameObject damageText;
-    public GameObject speedText;
-    public GameObject rangeText;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,25 +17,33 @@ public class StatsTextBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(towerBehavior.TowerExists())
+        //Debug.Log(TowerBehavior.activeTowerExists);
+        if(TowerBehavior.activeTowerExists)
         {
-            activeTower = towerBehavior.GetActiveTower();
+            activeTower = TowerBehavior.GetActiveTower();
+            Debug.Log("Damage: " + CompareTag("DamageStat"));
+            Debug.Log("Speed: " + CompareTag("SpeedStat"));
+            Debug.Log("RangeStat: " + CompareTag("RangeStat"));
             if (CompareTag("DamageStat"))
             {
                 thisTowerScript = activeTower.GetComponent<TowerBehavior>();
-                damageText.GetComponent<Text>().text = thisTowerScript.bulletDamage.ToString();
+                Debug.Log(thisTowerScript.bulletDamage);
+                GetComponent<TMP_Text>().SetText(thisTowerScript.bulletDamage.ToString());
             }
+            
+
             else if (CompareTag("SpeedStat"))
             {
                 thisTowerScript = activeTower.GetComponent<TowerBehavior>();
-                speedText.GetComponent<Text>().text = thisTowerScript.reloadTime.ToString();
+                Debug.Log(thisTowerScript.reloadTime);
+                GetComponent<TMP_Text>().SetText(thisTowerScript.reloadTime.ToString());
 
             }
             else if (CompareTag("RangeStat"))
             {
                 thisTowerScript = activeTower.GetComponent<TowerBehavior>();
-                rangeText.GetComponent<Text>().text = thisTowerScript.rangeRadius.ToString();
+                Debug.Log(thisTowerScript.rangeRadius);
+                GetComponent<TMP_Text>().SetText(thisTowerScript.rangeRadius.ToString());
 
 
             }
