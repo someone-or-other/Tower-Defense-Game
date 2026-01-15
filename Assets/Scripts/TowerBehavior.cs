@@ -9,7 +9,7 @@ public class TowerBehavior : MonoBehaviour
     public float reloadTime;
     public float bulletDamage;
     public float bulletSpeed;
-    static GameObject activeTower;
+    public static GameObject activeTower;
     public GameObject bulletPrefab;
     public static GameObject modTowerMenuMoon;
     public static GameObject modTowerMenuSpark;
@@ -145,6 +145,7 @@ public class TowerBehavior : MonoBehaviour
             Debug.Log("modtowermoon exists");
             modTowerMenuMoon.SetActive(true);
             //moonPanel.SetActive(true);
+            
         }
         else
         {
