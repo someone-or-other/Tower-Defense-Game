@@ -103,9 +103,14 @@ MonoBehaviour:
   upgradeLevel: 0
   rangeRadius: 70
   reloadTime: 10
+  bulletDamage: 0
+  bulletSpeed: 0
   bulletPrefab: {fileID: 6779390260326347859, guid: 2899bc614cc83964aad655cabd87944d, type: 3}
   targetFarthest: 1
   bulletBehaviorObj: {fileID: 6779390260326347859, guid: 2899bc614cc83964aad655cabd87944d, type: 3}
+  moonStats: {fileID: 0}
+  sparkStats: {fileID: 0}
+  rayStats: {fileID: 0}
 --- !u!114 &-4210709006837578251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae36caa3876dab48ae4cc339fc6a118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  protectedPanel: {fileID: 80014845960371207, guid: cfcef321f83ce324bbbadd88db28f9e5, type: 3}
 --- !u!114 &6771661056798068110
 MonoBehaviour:
   m_ObjectHideFlags: 0

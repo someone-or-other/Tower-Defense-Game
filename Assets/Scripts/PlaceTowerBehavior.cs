@@ -13,11 +13,15 @@ public class PlaceTowerBehavior : MonoBehaviour
     private BuyTowerBehavior buyShadowTowerBehaviorGameObject;
     private BuyTowerBehavior buyRayTowerBehaviorGameObject;
     int thisTower = 0;
+    public GameObject protectedPanel;
+    public static GameObject canvas;
+
 
 
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        canvas = GameObject.Find("Canvas");
     }
     void Update()
     {
@@ -67,6 +71,7 @@ public class PlaceTowerBehavior : MonoBehaviour
 
             if (isPlacingTower)
             {
+                Instantiate(protectedPanel, Input.mousePosition, Quaternion.identity, canvas.transform);
                 Debug.Log("placed");
                 TowerBehavior.activeTowerExists = true;
                 TowerBehavior.activeTower = gameObject;

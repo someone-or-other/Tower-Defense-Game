@@ -11,7 +11,6 @@ public class ModTowerBehavior : MonoBehaviour
     [HideInInspector]
     public TowerBehavior currentTower;
 
-    public PanelScript panelScript;
     private Image menuImage;
     public TMP_Text upgradePriceText;
     public TMP_Text sellPriceText;

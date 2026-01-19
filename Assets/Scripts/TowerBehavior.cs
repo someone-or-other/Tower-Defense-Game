@@ -14,14 +14,17 @@ public class TowerBehavior : MonoBehaviour
     public static GameObject modTowerMenuMoon;
     public static GameObject modTowerMenuSpark;
     public static GameObject modTowerMenuRay;
-    //public static GameObject moonPanel;
-    //public static GameObject sparkPanel;
-    //public static GameObject rayPanel;
     public bool targetFarthest;
     public GameObject bulletBehaviorObj;
     private float elapsedTime;
     public static bool activeTowerExists;
     private int thisDamage;
+    public static GameObject moonPanel;
+    public static GameObject sparkPanel;
+    public static GameObject rayPanel;
+    public StatsTextBehavior moonStats;
+    public StatsTextBehavior sparkStats;
+    public StatsTextBehavior rayStats;
 
     void Update()
     {
@@ -82,6 +85,15 @@ public class TowerBehavior : MonoBehaviour
 
     public void Start()
     {
+        moonPanel = StatsTextBehavior.moonParentObj;
+        sparkPanel = StatsTextBehavior.sparkParentObj;
+        rayPanel = StatsTextBehavior.rayParentObj;
+        if(this.gameObject.name == "MoonTower(Clone)")
+            moonPanel.SetActive(true);
+        if(this.gameObject.name == "SparkTower(Clone)")
+            sparkPanel.SetActive(true);
+        if(this.gameObject.name == "RayTower(Clone)")
+            rayPanel.SetActive(true);
     }
 
     public void Upgrade()
@@ -121,71 +133,58 @@ public class TowerBehavior : MonoBehaviour
         modTowerMenuMoon.SetActive(false);
         modTowerMenuSpark.SetActive(false);
         modTowerMenuRay.SetActive(false);
-        //moonPanel.SetActive(false);
-        //rayPanel.SetActive(false);
-        //sparkPanel.SetActive(false);
 
     }
     private void OnMouseDown()
     {
-        //modTowerMenuMoon.SetActive(false);
-        //modTowerMenuSpark.SetActive(false);
-        //modTowerMenuRay.SetActive(false);
+
+
         if (this.gameObject.name == "MoonTower(Clone)")
         {
+            moonPanel.SetActive(true);
             activeTower = gameObject;
             Debug.Log("Moon Tower Clicked");
-            modTowerMenuMoon.SetActive(false);
-            //moonPanel.SetActive(false);
-            //sparkPanel.SetActive(false);
-            //rayPanel.SetActive(false);
-            modTowerMenuRay.SetActive(false);
-            modTowerMenuSpark.SetActive(false);
-            modTowerMenuMoon.GetComponent<ModTowerBehavior>().currentTower = this;
+            moonPanel.SetActive(false);
+            rayPanel.SetActive(false);
+            sparkPanel.SetActive(false);
+            moonPanel.GetComponent<ModTowerBehavior>().currentTower = this;
             Debug.Log("modtowermoon exists");
-            modTowerMenuMoon.SetActive(true);
-            //moonPanel.SetActive(true);
+            moonPanel.SetActive(true);
             
         }
         else
         {
-            //moonPanel.SetActive(false);
+            moonPanel.SetActive(false);
         }
         if (this.gameObject.name == "SparkTower(Clone)")
         {
+            sparkPanel.SetActive(true);
             activeTower = gameObject;
             Debug.Log("Spark Tower Clicked");
-            modTowerMenuMoon.SetActive(false);
-            //moonPanel.SetActive(false);
-            //sparkPanel.SetActive(false);
-            //rayPanel.SetActive(false);
-            modTowerMenuRay.SetActive(false);
-            modTowerMenuSpark.SetActive(false);
-            modTowerMenuSpark.GetComponent<ModTowerBehavior>().currentTower = this;
-            modTowerMenuSpark.SetActive(true);
-            //sparkPanel.SetActive(true);
+            moonPanel.SetActive(false);
+            rayPanel.SetActive(false);
+            sparkPanel.SetActive(false);
+            sparkPanel.GetComponent<ModTowerBehavior>().currentTower = this;
+            sparkPanel.SetActive(true);
         }
         else
         {
-            //sparkPanel.SetActive(false);
+            sparkPanel.SetActive(false);
         }
         if (this.gameObject.name == "RayTower(Clone)")
         {
+            rayPanel.SetActive(true);
             activeTower = gameObject;
             Debug.Log("Ray Tower Clicked");
-            modTowerMenuMoon.SetActive(false);
-            //moonPanel.SetActive(false);
-            //sparkPanel.SetActive(false);
-            //rayPanel.SetActive(false);
-            modTowerMenuRay.SetActive(false);
-            modTowerMenuSpark.SetActive(false);
-            modTowerMenuRay.GetComponent<ModTowerBehavior>().currentTower = this;
-            modTowerMenuRay.SetActive(true);
-            //rayPanel.SetActive(true);
+            moonPanel.SetActive(false);
+            rayPanel.SetActive(false);
+            sparkPanel.SetActive(false);
+            rayPanel.GetComponent<ModTowerBehavior>().currentTower = this;
+            rayPanel.SetActive(true);
         }
         else
         {
-            //rayPanel.SetActive(false);
+            rayPanel.SetActive(false);
         }
 
     }

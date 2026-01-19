@@ -41,12 +41,6 @@ public class BuyTowerBehavior : MonoBehaviour
 
                 PlaceTowerBehaviorScript = GameObject.Find("MoonTower").GetComponent<PlaceTowerBehavior>();
                 BuyTowerButtonBehaviorScript.buyMenu.SetActive(true);
-              //  hasPlacedTower = PlaceTowerBehaviorScript.GetFinishPlacingTower();
-                if (!isPlacingTower)
-                {
-                    Debug.Log("has placed tower true");
-
-                }
             }
         }
         else
