@@ -85,6 +85,21 @@ public class TowerBehavior : MonoBehaviour
 
     public void Awake()
     {
+        if (this.gameObject.name == "MoonTower(Clone)")
+        {
+            this.bulletDamage = 2;
+        }
+        else if (this.gameObject.name == "SparkTower(Clone)")
+        {
+            this.bulletDamage = 1;
+        }
+        else if (this.gameObject.name == "RayTower(Clone)")
+        {
+            this.bulletDamage = 4;
+        }
+        
+        //-------------------------------------------------
+
         if (StatsTextBehavior.moonParentObj != null && StatsTextBehavior.sparkParentObj != null && StatsTextBehavior.rayParentObj != null)
         {
             Debug.Log("All Parent Obj NOT null");
