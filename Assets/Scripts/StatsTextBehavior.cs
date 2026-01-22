@@ -9,6 +9,9 @@ public class StatsTextBehavior : MonoBehaviour
     public static GameObject moonParentObj;
     public static GameObject sparkParentObj;
     public static GameObject rayParentObj;
+    public static Image moonImage;
+    public static Image sparkImage;
+    public static Image rayImage;
     GameObject activeTower;
     TowerBehavior thisTowerScript;
     static bool startCheckVar = false;
@@ -18,7 +21,11 @@ public class StatsTextBehavior : MonoBehaviour
         moonParentObj = GameObject.Find("UpgradeTowerMoon");
         sparkParentObj = GameObject.Find("UpgradeTowerSpark");
         rayParentObj = GameObject.Find("UpgradeTowerRay");
+        moonImage = GameObject.Find("TowerImageMoon").GetComponent<Image>();
+        sparkImage = GameObject.Find("TowerImageSpark").GetComponent<Image>();
+        rayImage = GameObject.Find("TowerImageRay").GetComponent<Image>();
         startCheckVar = true;
+        
     }
 
     void Update()
@@ -57,24 +64,27 @@ public class StatsTextBehavior : MonoBehaviour
 
         if (isActiveAndEnabled)
         {
+            if (this != null)
 
-            if (TowerBehavior.activeTowerExists)
             {
-                activeTower = TowerBehavior.GetActiveTower();
-                if (CompareTag("DamageStat"))
+                if (TowerBehavior.activeTowerExists)
                 {
-                    thisTowerScript = activeTower.GetComponent<TowerBehavior>();
-                    GetComponent<TMP_Text>().SetText(thisTowerScript.bulletDamage.ToString());
-                }
-                else if (CompareTag("SpeedStat"))
-                {
-                    thisTowerScript = activeTower.GetComponent<TowerBehavior>();
-                    GetComponent<TMP_Text>().SetText(thisTowerScript.reloadTime.ToString());
-                }
-                else if (CompareTag("RangeStat"))
-                {
-                    thisTowerScript = activeTower.GetComponent<TowerBehavior>();
-                    GetComponent<TMP_Text>().SetText(thisTowerScript.rangeRadius.ToString());
+                    activeTower = TowerBehavior.GetActiveTower();
+                    if (CompareTag("DamageStat") && activeTower != null)
+                    {
+                        thisTowerScript = activeTower.GetComponent<TowerBehavior>();
+                        GetComponent<TMP_Text>().SetText(thisTowerScript.bulletDamage.ToString());
+                    }
+                    else if (CompareTag("SpeedStat") && activeTower != null)
+                    {
+                        thisTowerScript = activeTower.GetComponent<TowerBehavior>();
+                        GetComponent<TMP_Text>().SetText(thisTowerScript.reloadTime.ToString());
+                    }
+                    else if (CompareTag("RangeStat") && activeTower != null)
+                    {
+                        thisTowerScript = activeTower.GetComponent<TowerBehavior>();
+                        GetComponent<TMP_Text>().SetText(thisTowerScript.rangeRadius.ToString());
+                    }
                 }
             }
         }

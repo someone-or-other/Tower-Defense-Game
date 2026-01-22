@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 114529021
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3f78392380c30784c942d5c04c211aac, type: 3}
+  m_Sprite: {fileID: -1962787260, guid: 8c2d9592256b71c48a2dfe33e8579428, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -109,9 +109,16 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6779390260326347859, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
   targetFarthest: 0
   bulletBehaviorObj: {fileID: 6779390260326347859, guid: 15be8ae7167b73e4fa6b61651d35255a, type: 3}
-  moonStats: {fileID: 0}
-  sparkStats: {fileID: 0}
-  rayStats: {fileID: 0}
+  moonTowerSpriteLv2: {fileID: -1962787260, guid: 8c2d9592256b71c48a2dfe33e8579428, type: 3}
+  moonTowerSpriteLv3: {fileID: 719541903, guid: d64f78ab1e0754c41891afaece23a7bf, type: 3}
+  sparkTowerSpriteLv2: {fileID: -1539320569, guid: c7ca2703f4dd5a149b429b1ab72a7b22, type: 3}
+  sparkTowerSpriteLv3: {fileID: 241641014, guid: 08a1b86e079cdfd46b7b0e5120e8a7a5, type: 3}
+  rayTowerSpriteLv2: {fileID: -89184628, guid: 7bcbc2ebff613094f86ebb3cf36f78c6, type: 3}
+  rayTowerSpriteLv3: {fileID: -1165311246, guid: f97d5f76fce17434b846f96cddaef28f, type: 3}
+  moonAnimator: {fileID: 623578106732377619}
+  sparkAnimator: {fileID: 1457136217305894235, guid: 1cf1d85ab68060941b26aad7950efb1c, type: 3}
+  rayAnimator: {fileID: 1823115321276363445, guid: bcf997fd53d2e4a4ab93c811b497c43c, type: 3}
+  towerImage: {fileID: 0}
 --- !u!114 &-4210709006837578251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae36caa3876dab48ae4cc339fc6a118, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  protectedPanel: {fileID: 80014845960371207, guid: cfcef321f83ce324bbbadd88db28f9e5, type: 3}
 --- !u!114 &394404573665535228
 MonoBehaviour:
   m_ObjectHideFlags: 0

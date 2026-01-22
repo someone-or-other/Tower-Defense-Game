@@ -55,13 +55,20 @@ public class GameManager : MonoBehaviour
 
     private int round = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         isDead = false;
         roundText.text = "Round: " + round.ToString();
         //StartCoroutine("SpawnEnemies", enemyAmountToSpawn);
         speedCycleVar = 0;
+    }
+
+    private void Update()
+    {
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     IEnumerator SpawnEnemies(int number)

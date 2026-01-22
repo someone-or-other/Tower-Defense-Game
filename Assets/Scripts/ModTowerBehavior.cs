@@ -11,7 +11,8 @@ public class ModTowerBehavior : MonoBehaviour
     [HideInInspector]
     public TowerBehavior currentTower;
 
-    private Image menuImage;
+    
+    public Image menuImage;
     public TMP_Text upgradePriceText;
     public TMP_Text sellPriceText;
 
@@ -30,8 +31,8 @@ public class ModTowerBehavior : MonoBehaviour
     public int sellPriceLevel2;
 
     private int level;
-    private int currentUpgradePrice;
-    private int currentSellPrice;
+    private int currentUpgradePrice = 500;
+    private int currentSellPrice = 450;
 
     
 
@@ -55,11 +56,34 @@ public class ModTowerBehavior : MonoBehaviour
     }
     private void OnEnable()
     {
+        
+    }
+    public void Upgrade()
+    {
+        currentTower = TowerBehavior.GetActiveTower().GetComponent<TowerBehavior>();
+        if (level == 2)
+        {
+            return;
+        }
+        int money = moneyCounter.GetMoney();
+
+        if (money >= currentUpgradePrice)
+        {
+            Debug.Log(currentUpgradePrice);
+            Debug.Log(money);
+            moneyCounter.ChangeMoney(-currentUpgradePrice);
+            currentTower.Upgrade();
+            gameObject.SetActive(false);
+            //panelScript.Close();
+
+
         if (!currentTower)
         {
             return;
         }
+        currentTower = TowerBehavior.GetActiveTower().GetComponent<TowerBehavior>();
         level = currentTower.upgradeLevel;
+        Debug.Log(level + "aaaaaaaaaaaaaaaaaaaaaaaahhhh!!!!!");
         switch (level)
         {
             case 0:
@@ -83,30 +107,27 @@ public class ModTowerBehavior : MonoBehaviour
                 currentSellPrice = sellPriceLevel2;
                 break;
         }
-    }
-    public void Upgrade()
-    {
-        if (level == 2)
-        {
-            return;
-        }
-        int money = moneyCounter.GetMoney();
-
-        if (money >= currentUpgradePrice)
-        {
-            moneyCounter.ChangeMoney(-currentUpgradePrice);
-            currentTower.Upgrade();
-            //gameObject.SetActive(false);
-            //panelScript.Close();
-
         }
     }
     public void Sell()
     {
+        currentTower = TowerBehavior.GetActiveTower().GetComponent<TowerBehavior>();
+
+        if (currentTower.name == "MoonTower(Clone)")
+        {
+            StatsTextBehavior.moonParentObj.SetActive(false);
+        }
+        else if (currentTower.name == "SparkTower(Clone)")
+        {
+            StatsTextBehavior.sparkParentObj.SetActive(false);
+        }
+        else if (currentTower.name == "RayTower(Clone)")
+        {
+            StatsTextBehavior.rayParentObj.SetActive(false);
+        }
         moneyCounter.ChangeMoney(currentSellPrice);
         Destroy(currentTower.gameObject);
-        //gameObject.SetActive(false);
-        //panelScript.Close();
+        
     }
 
 }

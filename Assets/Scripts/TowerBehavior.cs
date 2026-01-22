@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TowerBehavior : MonoBehaviour
 {
@@ -22,11 +23,17 @@ public class TowerBehavior : MonoBehaviour
     public static GameObject moonParentObj;
     public static GameObject sparkPanel;
     public static GameObject rayPanel;
-    /*
-    public StatsTextBehavior moonStats;
-    public StatsTextBehavior sparkStats;
-    public StatsTextBehavior rayStats;
-    */
+    public Sprite moonTowerSpriteLv2;
+    public Sprite moonTowerSpriteLv3;
+    public Sprite sparkTowerSpriteLv2;
+    public Sprite sparkTowerSpriteLv3;
+    public Sprite rayTowerSpriteLv2;
+    public Sprite rayTowerSpriteLv3;
+    public Animator moonAnimator;
+    public Animator sparkAnimator;
+    public Animator rayAnimator;
+    public Image towerImage;
+
     void Update()
     {
         if (elapsedTime >= reloadTime) {
@@ -87,14 +94,17 @@ public class TowerBehavior : MonoBehaviour
     {
         if (this.gameObject.name == "MoonTower(Clone)")
         {
+            towerImage = StatsTextBehavior.moonImage;
             this.bulletDamage = 2;
         }
         else if (this.gameObject.name == "SparkTower(Clone)")
         {
+            towerImage = StatsTextBehavior.sparkImage;
             this.bulletDamage = 1;
         }
         else if (this.gameObject.name == "RayTower(Clone)")
         {
+            towerImage = StatsTextBehavior.rayImage;
             this.bulletDamage = 4;
         }
         
@@ -140,7 +150,7 @@ public class TowerBehavior : MonoBehaviour
 
     public void Upgrade()
     {
-        
+        upgradeLevel++;
 
         //---------------------------------------------------------
 
@@ -148,39 +158,78 @@ public class TowerBehavior : MonoBehaviour
         if (this.gameObject.name == "MoonTower(Clone)")
         {
             Debug.Log("MoonTower upgraded");
-            reloadTime = 2;
-            bulletDamage = 4;
-            bulletSpeed = 12;
-            rangeRadius = 20;
-            bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletDamage(4);
-            bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletSpeed(12);
+            moonAnimator.SetInteger("UpgradeLv", upgradeLevel);
+            if(upgradeLevel == 1)
+            {
+                StatsTextBehavior.moonImage.sprite = moonTowerSpriteLv2;
+                rangeRadius = 20;
+                reloadTime = 2;
+                bulletDamage = 5;
+                bulletSpeed = 12;
+                this.GetComponent<SpriteRenderer>().sprite = moonTowerSpriteLv2;
+            }
+            else if(upgradeLevel == 2)
+            {
+                StatsTextBehavior.moonImage.sprite = moonTowerSpriteLv3;
+                //Overall improvement
+                rangeRadius = 30;
+                reloadTime = 1;
+                bulletDamage = 7;
+                bulletSpeed = 20;
+                this.GetComponent<SpriteRenderer>().sprite = moonTowerSpriteLv3;
+
+            }
         }
         else if (this.gameObject.name == "SparkTower(Clone)")
         {
+            sparkAnimator.SetInteger("UpgradeLv", upgradeLevel);
             Debug.Log("SparkTower upgraded");
-            reloadTime = 0.75f;
-            bulletDamage = 2;
-            bulletSpeed = 20;
-            rangeRadius = 12;
-            bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletDamage(2);
-            bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletSpeed(20);
-
+            if(upgradeLevel == 1)
+            {
+                StatsTextBehavior.sparkImage.sprite = sparkTowerSpriteLv2;
+                rangeRadius = 14;
+                reloadTime = .75f;
+                bulletDamage = 4;
+                bulletSpeed = 20;
+                this.GetComponent<SpriteRenderer>().sprite = sparkTowerSpriteLv2;
+            }
+            else if(upgradeLevel == 2)
+            {
+                StatsTextBehavior.sparkImage.sprite = sparkTowerSpriteLv3;
+                //incredibly fast
+                rangeRadius = 17;
+                reloadTime = .4f;
+                bulletDamage = 5;
+                bulletSpeed = 20;
+                this.GetComponent<SpriteRenderer>().sprite = sparkTowerSpriteLv3;
+            }
         }
         else if (this.gameObject.name == "RayTower(Clone)")
         {
+            rayAnimator.SetInteger("UpgradeLv", upgradeLevel);
+            //lots of damage but even slower
             Debug.Log("RayTower upgraded");
-            reloadTime = 6;
-            bulletDamage = 8;
-            bulletSpeed = 28;
-            rangeRadius = 90;
-            bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletDamage(8);
-            bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletSpeed(28);
+            if (upgradeLevel == 1)
+            {
+                StatsTextBehavior.rayImage.sprite = rayTowerSpriteLv2;
+                rangeRadius = 90;
+                reloadTime = 6;
+                bulletDamage = 8;
+                bulletSpeed = 28;
+                this.GetComponent<SpriteRenderer>().sprite = rayTowerSpriteLv2;
+            }
+            else if (upgradeLevel == 2)
+            {
+                StatsTextBehavior.rayImage.sprite = rayTowerSpriteLv3;
+                rangeRadius = 90;
+                reloadTime = 7;
+                bulletDamage = 15;
+                bulletSpeed = 30;
+                this.GetComponent<SpriteRenderer>().sprite = rayTowerSpriteLv3;
+            }
         }
-        upgradeLevel++;
-        modTowerMenuMoon.SetActive(false);
-        modTowerMenuSpark.SetActive(false);
-        modTowerMenuRay.SetActive(false);
-
+        bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletDamage((int)bulletDamage);
+        bulletBehaviorObj.GetComponent<BulletBehavior>().SetBulletSpeed((int)bulletSpeed);
     }
     private void OnMouseDown()
     {

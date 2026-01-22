@@ -529,9 +529,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 966208103}
     m_Modifications:
+    - target: {fileID: 1169905326565861653, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: m_Name
+      value: TowerImageRay
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: menuImage
+      value: 
+      objectReference: {fileID: 902322196}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: menuLevel0
+      value: 
+      objectReference: {fileID: 21300000, guid: e42013bcd50bc75468c7f6d8bcb007bc, type: 3}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: menuLevel1
+      value: 
+      objectReference: {fileID: -89184628, guid: 7bcbc2ebff613094f86ebb3cf36f78c6, type: 3}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: menuLevel2
+      value: 
+      objectReference: {fileID: -1165311246, guid: f97d5f76fce17434b846f96cddaef28f, type: 3}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: sellPriceLevel0
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: sellPriceLevel1
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: sellPriceLevel2
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: upgradePriceLevel0
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: upgradePriceLevel1
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4111589836764749339, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: m_text
+      value: +$450
+      objectReference: {fileID: 0}
     - target: {fileID: 4588167482269708947, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
       propertyPath: m_Name
       value: UpgradeTowerRay
+      objectReference: {fileID: 0}
+    - target: {fileID: 4588167482269708947, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5686653441656321254, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
       propertyPath: m_Pivot.x
@@ -1659,7 +1707,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 13.976013, y: -152.4}
+  m_AnchoredPosition: {x: 13.976074, y: -152.4}
   m_SizeDelta: {x: 109.9518, y: 25}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &383579122
@@ -2164,6 +2212,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439527473}
   m_CullTransparentMesh: 1
+--- !u!114 &464759394 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1358115069869228907, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+  m_PrefabInstance: {fileID: 755975880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &516690048
 GameObject:
   m_ObjectHideFlags: 0
@@ -2980,10 +3039,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 966208103}
     m_Modifications:
+    - target: {fileID: 8680250230505942, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: m_text
+      value: -$500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1169905326565861653, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: m_Name
+      value: TowerImageMoon
+      objectReference: {fileID: 0}
     - target: {fileID: 1358115069869228907, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3749fc1aa58850945bdc4422950cacc0, type: 3}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: menuImage
+      value: 
+      objectReference: {fileID: 464759394}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: menuLevel0
+      value: 
+      objectReference: {fileID: 21300000, guid: 3749fc1aa58850945bdc4422950cacc0, type: 3}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: menuLevel1
+      value: 
+      objectReference: {fileID: -1962787260, guid: 8c2d9592256b71c48a2dfe33e8579428, type: 3}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: menuLevel2
+      value: 
+      objectReference: {fileID: 719541903, guid: d64f78ab1e0754c41891afaece23a7bf, type: 3}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: sellPriceLevel0
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: sellPriceLevel1
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: sellPriceLevel2
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: upgradePriceLevel0
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: upgradePriceLevel1
+      value: 750
+      objectReference: {fileID: 0}
     - target: {fileID: 2734087446430182631, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
       propertyPath: parentObj
       value: 
@@ -2996,6 +3099,10 @@ PrefabInstance:
       propertyPath: parentObj
       value: 
       objectReference: {fileID: 1356876342}
+    - target: {fileID: 4111589836764749339, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: m_text
+      value: +$450
+      objectReference: {fileID: 0}
     - target: {fileID: 4588167482269708947, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
       propertyPath: m_Name
       value: UpgradeTowerMoon
@@ -3774,6 +3881,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877352658}
   m_CullTransparentMesh: 1
+--- !u!114 &902322196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1358115069869228907, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+  m_PrefabInstance: {fileID: 122524856}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &907722655
 GameObject:
   m_ObjectHideFlags: 0
@@ -4240,6 +4358,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043484590}
   m_CullTransparentMesh: 1
+--- !u!114 &1053327066 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1358115069869228907, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+  m_PrefabInstance: {fileID: 1309035921}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1121654489
 GameObject:
   m_ObjectHideFlags: 0
@@ -5176,7 +5305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1282074161
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5298,10 +5427,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 966208103}
     m_Modifications:
+    - target: {fileID: 1169905326565861653, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: m_Name
+      value: TowerImageSpark
+      objectReference: {fileID: 0}
     - target: {fileID: 1358115069869228907, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 6ebbd0f0b7f27af43b900bfeffd6c643, type: 3}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: menuImage
+      value: 
+      objectReference: {fileID: 1053327066}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: menuLevel0
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ebbd0f0b7f27af43b900bfeffd6c643, type: 3}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: menuLevel1
+      value: 
+      objectReference: {fileID: -1539320569, guid: c7ca2703f4dd5a149b429b1ab72a7b22, type: 3}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: menuLevel2
+      value: 
+      objectReference: {fileID: 241641014, guid: 08a1b86e079cdfd46b7b0e5120e8a7a5, type: 3}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: sellPriceLevel0
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: sellPriceLevel1
+      value: 700
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: sellPriceLevel2
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: upgradePriceLevel0
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678800605431775899, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: upgradePriceLevel1
+      value: 750
+      objectReference: {fileID: 0}
     - target: {fileID: 2734087446430182631, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
       propertyPath: parentObj
       value: 
@@ -5310,6 +5479,10 @@ PrefabInstance:
       propertyPath: parentObj
       value: 
       objectReference: {fileID: 1040280205}
+    - target: {fileID: 4111589836764749339, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
+      propertyPath: m_text
+      value: +$450
+      objectReference: {fileID: 0}
     - target: {fileID: 4588167482269708947, guid: 34981470f321ffb4aa1521b0cefa687a, type: 3}
       propertyPath: m_Name
       value: UpgradeTowerSpark
