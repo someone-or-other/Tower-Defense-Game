@@ -19,16 +19,16 @@ public class TowerBehavior : MonoBehaviour
     private float elapsedTime;
     public static bool activeTowerExists;
     private int thisDamage;
-    public static GameObject moonPanel;
+    public static GameObject moonParentObj;
     public static GameObject sparkPanel;
     public static GameObject rayPanel;
+    /*
     public StatsTextBehavior moonStats;
     public StatsTextBehavior sparkStats;
     public StatsTextBehavior rayStats;
-
+    */
     void Update()
     {
-        
         if (elapsedTime >= reloadTime) {
             elapsedTime = 0;
             Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, rangeRadius);
@@ -83,21 +83,53 @@ public class TowerBehavior : MonoBehaviour
         elapsedTime += Time.deltaTime;
     }
 
-    public void Start()
+    public void Awake()
     {
-        moonPanel = StatsTextBehavior.moonParentObj;
-        sparkPanel = StatsTextBehavior.sparkParentObj;
-        rayPanel = StatsTextBehavior.rayParentObj;
-        if(this.gameObject.name == "MoonTower(Clone)")
-            moonPanel.SetActive(true);
-        if(this.gameObject.name == "SparkTower(Clone)")
-            sparkPanel.SetActive(true);
-        if(this.gameObject.name == "RayTower(Clone)")
-            rayPanel.SetActive(true);
+        if (StatsTextBehavior.moonParentObj != null && StatsTextBehavior.sparkParentObj != null && StatsTextBehavior.rayParentObj != null)
+        {
+            Debug.Log("All Parent Obj NOT null");
+        }
+        else if (StatsTextBehavior.moonParentObj != null && StatsTextBehavior.sparkParentObj != null)
+        {
+            Debug.Log("Moon Parent Obj & Spark Parent Obj NOT null -> Ray Parent Obj null");
+        }
+        else if (StatsTextBehavior.moonParentObj != null && StatsTextBehavior.rayParentObj != null)
+        {
+            Debug.Log("Moon Parent Obj & Ray Parent Obj NOT null -> Spark Parent Obj null");
+        }
+        else if (StatsTextBehavior.sparkParentObj != null && StatsTextBehavior.rayParentObj != null)
+        {
+            Debug.Log("Spark Parent Obj & Ray Parent Obj NOT null -> Moon Parent Obj null");
+        }
+        else if (StatsTextBehavior.moonParentObj != null)
+        {
+            Debug.Log("Only Moon Parent Obj NOT null");
+        }
+        else if (StatsTextBehavior.sparkParentObj != null)
+        {
+            Debug.Log("Only Spark Parent Obj NOT null");
+        }
+        else if (StatsTextBehavior.rayParentObj != null)
+        {
+            Debug.Log("Only Ray Parent Obj NOT null");
+        }
+        else if (StatsTextBehavior.moonParentObj == null && StatsTextBehavior.sparkParentObj == null && StatsTextBehavior.rayParentObj == null)
+        {
+            Debug.Log("Very Broken, all Parent Objs are null");
+        }
+        else
+        {
+            Debug.Log("??? How???");
+        }
     }
 
     public void Upgrade()
     {
+        
+
+        //---------------------------------------------------------
+
+
         if (this.gameObject.name == "MoonTower(Clone)")
         {
             Debug.Log("MoonTower upgraded");
@@ -141,50 +173,44 @@ public class TowerBehavior : MonoBehaviour
 
         if (this.gameObject.name == "MoonTower(Clone)")
         {
-            moonPanel.SetActive(true);
+            StatsTextBehavior.moonParentObj.SetActive(true);
+            StatsTextBehavior.rayParentObj.SetActive(false);
+            StatsTextBehavior.sparkParentObj.SetActive(false);
             activeTower = gameObject;
             Debug.Log("Moon Tower Clicked");
-            moonPanel.SetActive(false);
-            rayPanel.SetActive(false);
-            sparkPanel.SetActive(false);
-            moonPanel.GetComponent<ModTowerBehavior>().currentTower = this;
+            StatsTextBehavior.moonParentObj.GetComponent<ModTowerBehavior>().currentTower = this;
             Debug.Log("modtowermoon exists");
-            moonPanel.SetActive(true);
-            
+
         }
         else
         {
-            moonPanel.SetActive(false);
+            StatsTextBehavior.moonParentObj.SetActive(false);
         }
         if (this.gameObject.name == "SparkTower(Clone)")
         {
-            sparkPanel.SetActive(true);
+            StatsTextBehavior.sparkParentObj.SetActive(true);
+            StatsTextBehavior.moonParentObj.SetActive(false);
+            StatsTextBehavior.rayParentObj.SetActive(false);
             activeTower = gameObject;
             Debug.Log("Spark Tower Clicked");
-            moonPanel.SetActive(false);
-            rayPanel.SetActive(false);
-            sparkPanel.SetActive(false);
-            sparkPanel.GetComponent<ModTowerBehavior>().currentTower = this;
-            sparkPanel.SetActive(true);
+            StatsTextBehavior.sparkParentObj.GetComponent<ModTowerBehavior>().currentTower = this;
         }
         else
         {
-            sparkPanel.SetActive(false);
+            StatsTextBehavior.sparkParentObj.SetActive(false);
         }
         if (this.gameObject.name == "RayTower(Clone)")
         {
-            rayPanel.SetActive(true);
+            StatsTextBehavior.rayParentObj.SetActive(true);
+            StatsTextBehavior.moonParentObj.SetActive(false);
+            StatsTextBehavior.sparkParentObj.SetActive(false);
             activeTower = gameObject;
             Debug.Log("Ray Tower Clicked");
-            moonPanel.SetActive(false);
-            rayPanel.SetActive(false);
-            sparkPanel.SetActive(false);
-            rayPanel.GetComponent<ModTowerBehavior>().currentTower = this;
-            rayPanel.SetActive(true);
+            StatsTextBehavior.rayParentObj.GetComponent<ModTowerBehavior>().currentTower = this;
         }
         else
         {
-            rayPanel.SetActive(false);
+            StatsTextBehavior.rayParentObj.SetActive(false);
         }
 
     }

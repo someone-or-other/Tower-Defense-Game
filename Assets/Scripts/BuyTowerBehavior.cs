@@ -20,7 +20,7 @@ public class BuyTowerBehavior : MonoBehaviour
         
         //moneyCounter = GameObject.Find("MoneyCounterText").GetComponent<MoneyCounterBehavior>();
         priceText.text = "$" + price;
-        Debug.Log(gameObject.name);
+        //Debug.Log(gameObject.name);
     }
 
     public void OnClick()

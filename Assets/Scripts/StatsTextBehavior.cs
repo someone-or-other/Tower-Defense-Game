@@ -9,14 +9,15 @@ public class StatsTextBehavior : MonoBehaviour
     public static GameObject moonParentObj;
     public static GameObject sparkParentObj;
     public static GameObject rayParentObj;
-    public static bool isProtectedMoon;
-    public static bool isProtectedSpark;
-    public static bool isProtectedRay;
     GameObject activeTower;
     TowerBehavior thisTowerScript;
+    static bool startCheckVar = false;
+
     // Start is called before the first frame update
+    /*
     void Start()
     {
+        Debug.Log("aaaaaaaaaaaaaaaaaaaaaa");
         moonParentObj = GameObject.Find("UpgradeTowerMoon");
         sparkParentObj = GameObject.Find("UpgradeTowerSpark");
         rayParentObj = GameObject.Find("UpgradeTowerRay");
@@ -28,10 +29,58 @@ public class StatsTextBehavior : MonoBehaviour
         }
 
     }
+    */
 
+    void Awake()
+    {
+        moonParentObj = GameObject.Find("UpgradeTowerMoon");
+        sparkParentObj = GameObject.Find("UpgradeTowerSpark");
+        rayParentObj = GameObject.Find("UpgradeTowerRay");
+        startCheckVar = true;
+    }
     // Update is called once per frame
     void Update()
     {
+        if(startCheckVar == true)
+        {
+            if (moonParentObj != null)
+            {
+                moonParentObj.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("moonParentObj null");
+            }
+            if(sparkParentObj != null)
+            {
+                sparkParentObj.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("sparkParentObj null");
+            }
+            if (rayParentObj != null)
+            {
+                rayParentObj.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("rayParentObj null");
+            }
+            if(!moonParentObj.activeInHierarchy && !sparkParentObj.activeInHierarchy && !rayParentObj.activeInHierarchy)
+            {
+                startCheckVar = false;
+            }
+        }
+        /*
+        if (!TowerBehavior.activeTowerExists)
+        {
+
+            moonParentObj = GameObject.Find("UpgradeTowerMoon");
+            sparkParentObj = GameObject.Find("UpgradeTowerSpark");
+            rayParentObj = GameObject.Find("UpgradeTowerRay");
+        }
+        */
         if(isActiveAndEnabled)
         {
 
@@ -69,4 +118,15 @@ public class StatsTextBehavior : MonoBehaviour
         }
         
     }
+
+
+
+    public static void SetAllPanelsFalse()
+    {
+
+        moonParentObj.SetActive(false);
+        sparkParentObj.SetActive(false);
+        rayParentObj.SetActive(false);
+    }
+
 }

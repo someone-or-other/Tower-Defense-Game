@@ -6,14 +6,12 @@ using UnityEngine;
 public class PlaceTowerBehavior : MonoBehaviour
 {
     bool isPlacingTower;
-    bool hasPlacedTower = false;
     private GameManager gameManager;
     private BuyTowerBehavior buyMoonTowerBehaviorGameObject;
     private BuyTowerBehavior buySparkTowerBehaviorGameObject;
     private BuyTowerBehavior buyShadowTowerBehaviorGameObject;
     private BuyTowerBehavior buyRayTowerBehaviorGameObject;
     int thisTower = 0;
-    public GameObject protectedPanel;
     public static GameObject canvas;
 
 
@@ -71,12 +69,33 @@ public class PlaceTowerBehavior : MonoBehaviour
 
             if (isPlacingTower)
             {
-                Instantiate(protectedPanel, Input.mousePosition, Quaternion.identity, canvas.transform);
                 Debug.Log("placed");
                 TowerBehavior.activeTowerExists = true;
                 TowerBehavior.activeTower = gameObject;
+                if (StatsTextBehavior.moonParentObj != null && StatsTextBehavior.sparkParentObj != null && StatsTextBehavior.rayParentObj != null)
+                {
+                        if (this.gameObject.name == "MoonTower(Clone)")
+                        {
+                            StatsTextBehavior.moonParentObj.SetActive(true);
+                            StatsTextBehavior.sparkParentObj.SetActive(false);
+                            StatsTextBehavior.rayParentObj.SetActive(false);
+                        }
+                        if (this.gameObject.name == "SparkTower(Clone)")
+                        {
+                            StatsTextBehavior.moonParentObj.SetActive(false);
+                            StatsTextBehavior.sparkParentObj.SetActive(true);
+                            StatsTextBehavior.rayParentObj.SetActive(false);
+                        }
+                        if (this.gameObject.name == "RayTower(Clone)")
+                        {
+                            StatsTextBehavior.moonParentObj.SetActive(false);
+                            StatsTextBehavior.sparkParentObj.SetActive(false);
+                            StatsTextBehavior.rayParentObj.SetActive(true);
+                        }
+                }
             }
-            hasPlacedTower = true;
+
+
 
             isPlacingTower = false;
             Destroy(this);
@@ -88,11 +107,5 @@ public class PlaceTowerBehavior : MonoBehaviour
             Destroy(this);
         }
         */
-    }
-
-
-    public bool GetFinishPlacingTower()
-    {
-        return hasPlacedTower;
     }
 }

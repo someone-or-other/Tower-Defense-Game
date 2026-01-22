@@ -1,33 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using TMPro;
+using UnityEngine.UI;
 
-public class ExitOutPanelBehavior : MonoBehaviour, IPointerDownHandler
+public class ExitOutPanelBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Exit()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    public void OnPointerDown(PointerEventData eventData)
-    {
-
-        if (StatsTextBehavior.moonParentObj.gameObject.activeInHierarchy == true
-            || StatsTextBehavior.sparkParentObj.gameObject.activeInHierarchy == true
-            || StatsTextBehavior.rayParentObj.gameObject.activeInHierarchy == true)
+        if(CompareTag("ButtonMoon"))
         {
-
-            Debug.Log("Clicked");
             StatsTextBehavior.moonParentObj.SetActive(false);
+
+        }
+        else if(CompareTag("ButtonSpark"))
+        {
             StatsTextBehavior.sparkParentObj.SetActive(false);
+
+        }
+        else if(CompareTag("ButtonRay"))
+        {
             StatsTextBehavior.rayParentObj.SetActive(false);
+
         }
     }
+          
 }

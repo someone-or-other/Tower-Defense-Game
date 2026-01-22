@@ -42,20 +42,16 @@ public class ModTowerBehavior : MonoBehaviour
         if (this.gameObject.name == "moonUpgradePanel")
         {
             TowerBehavior.modTowerMenuMoon = this.gameObject;
-            gameObject.SetActive(false);
         }
         if (this.gameObject.name == "sparkUpgradePanel")
         {
             TowerBehavior.modTowerMenuSpark = this.gameObject;
-            gameObject.SetActive(false);
         }
         if (this.gameObject.name == "rayUpgradePanel")
         {
             TowerBehavior.modTowerMenuRay = this.gameObject;
-            gameObject.SetActive(false);
 
         }
-        gameObject.SetActive(false);
     }
     private void OnEnable()
     {
@@ -100,7 +96,7 @@ public class ModTowerBehavior : MonoBehaviour
         {
             moneyCounter.ChangeMoney(-currentUpgradePrice);
             currentTower.Upgrade();
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
             //panelScript.Close();
 
         }
@@ -109,7 +105,7 @@ public class ModTowerBehavior : MonoBehaviour
     {
         moneyCounter.ChangeMoney(currentSellPrice);
         Destroy(currentTower.gameObject);
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
         //panelScript.Close();
     }
 
